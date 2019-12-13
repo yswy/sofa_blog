@@ -51,7 +51,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.zuoer.sofa.blog.run.SofaBlogApplication</mainClass>
+                    <mainClass>com.zuoer.sofa.blog.run.starter.SofaBlogStarter</mainClass>
                 </configuration>
             </plugin>
         </plugins>
