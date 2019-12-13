@@ -11,4 +11,32 @@
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
   </resultMap>
+
+  <select id="selectById" resultMap="BaseResultMap">
+		select id,article_id, tag_id,  gmt_create, gmt_modified  from tag_article where id = #{id}
+    </select>
+  <delete id="deleteById">
+		delete from tag_article where id = #{id}
+    </delete>
+  <insert id="insert" parameterType="com.zuoer.sofa.blog.dal.entity.TagArticleDO">
+		insert into tag_article(  id,article_id, tag_id,  gmt_create, gmt_modified)
+		 values (#{id},#{username},#{password},#{birthDate},#{nickname},#{email},#{github},#{qq},#{wecaht},#{avatar},sysdate,sysdate,#{hobby},#{motto},#{md_info})
+    </insert>
+  <update id="updateById" parameterType="com.zuoer.sofa.blog.dal.entity.TagArticleDO">
+        update tag_article set title=#{title}, introduction=#{introduction}, md_material=#{mdMaterial}, html_material=#{htmlMaterial}, gmt_modified=sysdate where  id = #{id}
+    </update>
+  <select id="selectByIds" resultMap="BaseResultMap">
+    select id,article_id, tag_id,  gmt_create, gmt_modified  from tag_article
+    where
+    <foreach collection="ids" item="id" open=" id in(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </select>
+  <delete id="deleteByIds">
+    delete from tag_article where
+    <foreach collection="ids" item="id" open=" id in(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </delete>
+
 </mapper>

@@ -13,4 +13,32 @@
     <result column="md_material" jdbcType="LONGVARCHAR" property="mdMaterial" />
     <result column="html_material" jdbcType="LONGVARCHAR" property="htmlMaterial" />
   </resultMap>
+
+  <select id="selectById" resultMap="BaseResultMap">
+		select id, title,  gmt_create, gmt_modified, introduction, md_material, html_material  from article where id = #{id}
+    </select>
+  <delete id="deleteById">
+		delete from article where id = #{id}
+    </delete>
+  <insert id="insert" parameterType="com.zuoer.sofa.blog.dal.entity.ArticleDO">
+		insert into article(  id, title,  gmt_create, gmt_modified, introduction, md_material, html_material)
+		 values (#{id},#{username},#{password},#{birthDate},#{nickname},#{email},#{github},#{qq},#{wecaht},#{avatar},sysdate,sysdate,#{hobby},#{motto},#{md_info})
+    </insert>
+  <update id="updateById" parameterType="com.zuoer.sofa.blog.dal.entity.ArticleDO">
+        update article set title=#{title}, introduction=#{introduction}, md_material=#{mdMaterial}, html_material=#{htmlMaterial}, gmt_modified=sysdate where  id = #{id}
+    </update>
+  <select id="selectByIds" resultMap="BaseResultMap">
+    select id, title,  gmt_create, gmt_modified, introduction, md_material, html_material  from article
+    where
+    <foreach collection="ids" item="id" open=" id in(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </select>
+  <delete id="deleteByIds">
+    delete from article where
+    <foreach collection="ids" item="id" open=" id in(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </delete>
+
 </mapper>

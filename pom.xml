@@ -27,6 +27,8 @@
     </modules>
 
     <properties>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Environment Settings -->
         <java.version>11</java.version>
 		<resteasy.version>3.0.12.Final</resteasy.version>

@@ -1,24 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="me.zbl.fullstack.mapper.AdminUserMapper">
-  <resultMap id="BaseResultMap" type="com.zuoer.sofa.blog.dal.entity.AdminUserDO">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="birth_date" jdbcType="DATE" property="birthDate" />
-    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="github" jdbcType="VARCHAR" property="github" />
-    <result column="qq" jdbcType="VARCHAR" property="qq" />
-    <result column="wecaht" jdbcType="VARCHAR" property="wecaht" />
-    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
-    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
-    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-    <result column="hobby" jdbcType="LONGVARCHAR" property="hobby" />
-    <result column="motto" jdbcType="LONGVARCHAR" property="motto" />
-    <result column="md_info" jdbcType="LONGVARCHAR" property="mdInfo" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="com.zuoer.sofa.blog.dal.entity.AdminUserDO">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="birth_date" jdbcType="DATE" property="birthDate"/>
+        <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="github" jdbcType="VARCHAR" property="github"/>
+        <result column="qq" jdbcType="VARCHAR" property="qq"/>
+        <result column="wecaht" jdbcType="VARCHAR" property="wecaht"/>
+        <result column="avatar" jdbcType="VARCHAR" property="avatar"/>
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"/>
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"/>
+        <result column="hobby" jdbcType="LONGVARCHAR" property="hobby"/>
+        <result column="motto" jdbcType="LONGVARCHAR" property="motto"/>
+        <result column="md_info" jdbcType="LONGVARCHAR" property="mdInfo"/>
+    </resultMap>
+
+    <select id="selectById" resultMap="BaseResultMap">
+		select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info  from admin_user where id = #{id}
+    </select>
+    <delete id="deleteById">
+		delete from admin_user where id = #{id}
+    </delete>
+    <insert id="insert" parameterType="com.zuoer.sofa.blog.dal.entity.AdminUserDO">
+		insert into admin_user(  id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info)
+		 values (#{id},#{username},#{password},#{birthDate},#{nickname},#{email},#{github},#{qq},#{wecaht},#{avatar},sysdate,sysdate,#{hobby},#{motto},#{md_info})
+    </insert>
+    <update id="updateById" parameterType="com.zuoer.sofa.blog.dal.entity.AdminUserDO">
+        update admin_user set username=#{username}, password=#{password}, birth_date=#{birthDate}, nickname=#{nickname},
+        email=#{email}, github=#{github}, qq=#{qq}, wecaht=#{wecaht}, avatar=#{avatar}, gmt_modified=sysdate,
+        hobby=#{hobby}, motto=#{motto}, md_info=#{md_info} where  id = #{id}
+    </update>
+    <select id="selectByIds" resultMap="BaseResultMap">
+        select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create,
+        gmt_modified, hobby, motto, md_info from admin_user
+        where
+        <foreach collection="ids" item="id" open=" id in(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+    <delete id="deleteByIds">
+        delete from admin_user where
+        <foreach collection="ids" item="id" open=" id in(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <insert id="insertBatch" parameterType="com.zuoer.sofa.blog.dal.entity.AdminUserDO">
+        insert all
+        <foreach collection="dbDoList" item="item">
+            into admin_user( id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar,
+            gmt_create, gmt_modified, hobby, motto, md_info)
+            values
+            (#{item.id},#{item.username},#{item.password},#{item.birthDate},#{item.nickname},#{item.email},#{item.github},#{item.qq},#{item.wecaht},#{item.avatar},sysdate,sysdate,#{item.hobby},#{item.motto},#{item.md_info})
+        </foreach>
+    </insert>
 </mapper>

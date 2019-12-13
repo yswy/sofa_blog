@@ -64,5 +64,5 @@ public interface CommonMybatisMapper<T,PKTYPE> {
 	 * @param dbDo
 	 * @return
 	 */
-	public PKTYPE insertBatch(List<T> dbDo);
+	public PKTYPE insertBatch(List<T> dbDoList);
 }

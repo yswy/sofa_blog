@@ -14,7 +14,7 @@ public class ConsumerTest {
         ConsumerConfig<HelloFacade> consumerConfig = new ConsumerConfig<HelloFacade>()
                 .setInterfaceId(HelloFacade.class.getName()) // 指定接口
                 .setProtocol("bolt") // 指定协议
-                .setDirectUrl("bolt://127.0.0.1:12200"); // 指定直连地址
+                .setDirectUrl("bolt://192.168.10.120:12200"); // 指定直连地址
         // 生成代理类
         HelloFacade helloService = consumerConfig.refer();
         System.out.println(helloService.helloStr("ceshi "));
@@ -27,7 +27,7 @@ public class ConsumerTest {
         ConsumerConfig<ByeFacade> consumerConfig2 = new ConsumerConfig<ByeFacade>()
                 .setInterfaceId(ByeFacade.class.getName()) // 指定接口
                 .setProtocol("bolt") // 指定协议
-                .setDirectUrl("bolt://127.0.0.1:12200"); // 指定直连地址
+                .setDirectUrl("bolt://192.168.10.120:12200"); // 指定直连地址
         // 生成代理类
         ByeFacade byeFacade = consumerConfig2.refer();
         System.out.println(byeFacade.byeStr("ceshi "));
