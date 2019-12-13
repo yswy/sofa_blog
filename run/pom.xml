@@ -13,20 +13,36 @@
     <artifactId>sofa-blog-run</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-  
-  <dependencies>
-  
-		
-		<dependency>
+
+    <dependencies>
+
+
+        <dependency>
             <groupId>com.zuoer</groupId>
-			<artifactId>sofa-blog-web-home</artifactId>
+            <artifactId>sofa-blog-web-home</artifactId>
         </dependency>
-		<dependency>
-			<groupId>com.zuoer</groupId>
-			<artifactId>sofa-blog-htdocs-template</artifactId>
+        <dependency>
+            <groupId>com.zuoer</groupId>
+            <artifactId>sofa-blog-core-service</artifactId>
         </dependency>
-		
-   
+        <dependency>
+            <groupId>com.zuoer</groupId>
+            <artifactId>sofa-blog-dal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zuoer</groupId>
+            <artifactId>sofa-blog-integration</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zuoer</groupId>
+            <artifactId>sofa-blog-htdocs-template</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zuoer</groupId>
+            <artifactId>sofa-blog-facade-impl</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>

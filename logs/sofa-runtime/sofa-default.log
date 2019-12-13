@@ -1,3 +1,459 @@
-2019-12-06 18:17:36,952 INFO  main                             - SOFABoot Runtime Starting!
-2019-12-06 18:19:26,815 INFO  main                             - SOFABoot Runtime Starting!
-2019-12-06 18:21:22,783 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 10:51:18,664 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 10:51:24,954 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:51:24,957 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:51:24,957 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:51:24,957 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 10:51:24,958 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:51:24,959 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:51:24,959 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 10:51:24,959 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:52:13,067 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 10:52:17,410 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:52:17,414 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:52:17,414 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:52:17,414 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 10:52:17,416 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:52:17,416 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:52:17,416 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 10:52:17,416 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:52:44,565 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 10:52:50,131 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:52:50,135 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:52:50,135 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:52:50,135 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 10:52:50,137 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:52:50,137 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:52:50,137 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 10:52:50,137 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:53:29,146 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 10:53:34,369 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:53:34,372 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:53:34,372 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:53:34,372 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 10:53:34,374 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 10:53:34,374 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 10:53:34,374 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 10:53:34,374 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:13:47,363 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:13:52,244 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:13:52,247 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:13:52,247 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:13:52,247 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 11:13:52,249 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:13:52,249 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:13:52,249 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 11:13:52,249 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:15:01,371 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:15:05,188 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:15:05,192 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:15:05,192 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:15:05,192 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 11:15:05,193 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:15:05,193 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:15:05,194 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 11:15:05,194 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:18:33,889 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:18:38,332 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:18:38,334 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:18:38,334 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:18:38,335 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 11:18:38,336 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:18:38,336 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:18:38,336 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 11:18:38,336 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:19:19,715 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:19:24,254 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:19:24,256 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:19:24,256 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:19:24,256 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 11:19:24,258 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:19:24,258 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:19:24,258 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 11:19:24,258 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:20:19,447 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:20:25,090 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:20:25,095 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:20:25,095 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:20:25,095 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 11:20:25,097 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:20:25,098 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:20:25,101 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 11:20:25,101 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:20:58,861 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:21:04,119 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:21:04,123 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:21:04,123 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:21:04,123 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 11:21:04,125 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:21:04,125 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:21:04,125 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 11:21:04,125 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:28:30,059 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:28:34,152 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:28:34,154 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:28:34,154 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:28:34,154 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 11:28:34,156 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:28:34,156 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:28:34,156 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 11:28:34,156 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:44:17,378 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:44:22,460 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:44:22,463 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:44:22,463 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:44:22,463 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 11:44:22,465 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:44:22,465 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:44:22,465 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 11:44:22,465 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:48:10,523 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:48:15,130 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:48:15,133 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:48:15,133 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:48:15,133 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 11:48:15,134 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:48:15,134 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:48:15,134 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 11:48:15,134 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:54:13,762 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:54:35,790 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:57:51,321 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 11:57:56,580 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:57:56,584 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:57:56,584 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:57:56,585 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 11:57:56,587 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 11:57:56,587 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 11:57:56,587 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 11:57:56,587 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:05:58,972 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 12:06:04,338 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:06:04,340 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:06:04,340 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:06:04,340 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 12:06:04,342 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:06:04,342 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:06:04,342 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 12:06:04,342 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:06:32,849 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 12:06:37,792 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:06:37,795 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:06:37,795 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:06:37,796 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 12:06:37,797 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:06:37,797 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:06:37,798 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 12:06:37,798 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:07:13,285 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 12:07:17,764 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:07:17,767 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:07:17,767 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:07:17,767 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 12:07:17,768 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:07:17,768 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:07:17,768 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 12:07:17,769 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:09:22,740 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 12:09:27,705 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:09:27,708 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:09:27,708 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:09:27,708 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 12:09:27,710 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:09:27,710 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:09:27,710 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 12:09:27,710 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:15:29,131 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 12:15:33,712 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:15:33,714 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:15:33,714 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:15:33,714 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 12:15:33,715 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:15:33,715 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:15:33,715 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 12:15:33,715 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:18:25,035 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 12:26:49,120 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 12:26:53,854 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:26:53,857 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:26:53,857 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:26:53,857 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 12:26:53,859 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:26:53,859 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:26:53,859 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 12:26:53,859 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:29:18,403 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 12:29:23,614 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:29:23,617 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:29:23,617 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:29:23,617 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 12:29:23,619 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:29:23,619 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:29:23,620 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 12:29:23,620 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:31:00,543 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 12:31:04,419 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:31:04,422 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:31:04,422 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:31:04,423 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 12:31:04,424 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 12:31:04,424 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 12:31:04,424 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 12:31:04,424 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 14:18:01,154 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 14:18:05,285 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 14:18:05,287 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 14:18:05,287 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 14:18:05,288 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 14:18:05,289 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 14:18:05,289 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 14:18:05,289 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 14:18:05,289 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 14:18:37,389 INFO  main                             - SOFABoot Runtime Starting!
+2019-12-13 14:18:41,725 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 14:18:41,727 INFO  main                             - ++++++++++++++++++ ModelCreatingStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 14:18:41,727 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 14:18:41,727 INFO  main                             - 
+All activated module list(0) >>>>>>>
+
+Modules that could install(0) >>>>>>>
+
+2019-12-13 14:18:41,728 INFO  main                             - ++++++++++++++++++ SpringContextInstallStage of sofa blog by zuoer End +++++++++++++++++
+2019-12-13 14:18:41,728 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer Start +++++++++++++++++
+2019-12-13 14:18:41,728 INFO  main                             - 
+Spring context initialize success module list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+Spring context initialize failed module list(0) >>>>>>>
+
+Spring bean load time cost list(0) >>>>>>> [totalTime = 0 ms, realTime = 0 ms]
+
+2019-12-13 14:18:41,728 INFO  main                             - ++++++++++++++++++ ModuleLogOutputStage of sofa blog by zuoer End +++++++++++++++++

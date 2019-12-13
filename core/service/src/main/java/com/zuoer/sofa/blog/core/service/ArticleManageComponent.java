@@ -4,11 +4,12 @@
  */
 package com.zuoer.sofa.blog.core.service;
 
+import com.zuoer.sofa.blog.facade.api.request.ArticleCreateRequest;
+import com.zuoer.sofa.blog.facade.api.request.ArticleModifyRequest;
+import com.zuoer.sofa.blog.facade.api.result.ArticleOperateResult;
+
 import java.util.List;
 
-import com.zuoer.sofa.blog.core.model.request.ArticleCreateRequest;
-import com.zuoer.sofa.blog.core.model.request.ArticleModifyRequest;
-import com.zuoer.sofa.blog.core.model.result.ArticleOperateResult;
 
 /**
  * 文章管理组件

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>${article.title!'全栈博客'}</title>
+    <title>${article.title!'全栈博客-左耳 '}</title>
 
 <#-- EditorMD -->
     <link href="/vendor/editor/css/editormd.css" rel="stylesheet">

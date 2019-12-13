@@ -18,7 +18,7 @@ import org.springframework.context.annotation.ImportResource;
  */
 @Configuration
 @ComponentScan({"com.zuoer.sofa.blog.*"})
-@ImportResource("classpath*:META-INF/spring/netflix-bench-*.xml")
+@ImportResource("classpath*:META-INF/spring/sofa-blog-*.xml")
 public class SofaBlogRunAutoConfig {
 
 }

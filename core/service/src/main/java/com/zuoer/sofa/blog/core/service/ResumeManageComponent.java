@@ -4,8 +4,8 @@
  */
 package com.zuoer.sofa.blog.core.service;
 
-import com.zuoer.sofa.blog.core.model.request.ResumeModifyRequest;
-import com.zuoer.sofa.blog.core.model.result.ResumeOperateResult;
+import com.zuoer.sofa.blog.facade.api.request.ResumeModifyRequest;
+import com.zuoer.sofa.blog.facade.api.result.ResumeOperateResult;
 
 /**
  *简历管理组件

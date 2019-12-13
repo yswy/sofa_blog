@@ -31,7 +31,7 @@ import org.springframework.core.ParameterNameDiscoverer;
 import org.springframework.util.Assert;
 
 import com.zuoer.sofa.blog.base.error.ErrorCode;
-import com.zuoer.sofa.blog.base.exception.BenchRuntimeException;
+import com.zuoer.sofa.blog.base.exception.BaseRuntimeException;
 
 /**
  * 有关 <code>Class</code> 处理的工具类。
@@ -54,7 +54,7 @@ public class ClassUtils {
 		try {
 			return clasz.newInstance();
 		} catch (Exception e) {
-			throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "实例化类异常,class=" + clasz);
+			throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "实例化类异常,class=" + clasz);
 		}
 	}
 
@@ -87,7 +87,7 @@ public class ClassUtils {
 		try {
 			return Class.forName(clasz).newInstance();
 		} catch (Exception e) {
-			throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "实例化类异常,class=" + clasz);
+			throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "实例化类异常,class=" + clasz);
 		}
 	}
 	/*
@@ -1700,4 +1700,6 @@ public class ClassUtils {
 	public static String[] getParameterNames(Constructor<?> ctor) {
 		return parameterNameDiscoverer.getParameterNames(ctor);
 	}
+
+
 }

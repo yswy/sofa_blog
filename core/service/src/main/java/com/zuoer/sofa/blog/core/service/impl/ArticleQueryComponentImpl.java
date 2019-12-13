@@ -4,16 +4,15 @@
  */
 package com.zuoer.sofa.blog.core.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.zuoer.sofa.blog.core.model.Article;
-import com.zuoer.sofa.blog.core.model.request.ArticleSearchRequest;
 import com.zuoer.sofa.blog.core.service.ArticleQueryComponent;
 import com.zuoer.sofa.blog.core.service.converter.ArticleConverter;
 import com.zuoer.sofa.blog.dal.mapper.ArticleMapper;
+import com.zuoer.sofa.blog.facade.api.request.ArticleSearchRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * 
@@ -49,7 +48,7 @@ public class ArticleQueryComponentImpl implements ArticleQueryComponent {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.zuoer.sofa.blog.core.service.ArticleQueryComponent#search(com.zuoer.sofa.blog.core.model.request.ArticleSearchRequest)
+	 * @see com.zuoer.sofa.blog.core.service.ArticleQueryComponent#search(com.zuoer.sofa.blog.facade.api.request.ArticleSearchRequest)
 	 */
 	@Override
 	public List<Article> search(ArticleSearchRequest request) {

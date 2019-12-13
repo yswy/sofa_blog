@@ -4,14 +4,13 @@
  */
 package com.zuoer.sofa.blog.core.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.zuoer.sofa.blog.core.model.request.ResumeModifyRequest;
-import com.zuoer.sofa.blog.core.model.result.ResumeOperateResult;
 import com.zuoer.sofa.blog.core.service.ResumeManageComponent;
 import com.zuoer.sofa.blog.dal.entity.ResumeDO;
 import com.zuoer.sofa.blog.dal.mapper.ResumeMapper;
+import com.zuoer.sofa.blog.facade.api.request.ResumeModifyRequest;
+import com.zuoer.sofa.blog.facade.api.result.ResumeOperateResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * 
@@ -26,7 +25,7 @@ public class ResumeManageComponentImpl implements ResumeManageComponent {
 	private ResumeMapper resumeMapper;
 
 	/* (non-Javadoc)
-	 * @see com.zuoer.sofa.blog.core.service.ResumeManageComponent#modify(com.zuoer.sofa.blog.core.model.request.ResumeModifyRequest)
+	 * @see com.zuoer.sofa.blog.core.service.ResumeManageComponent#modify(com.zuoer.sofa.blog.facade.api.request.ResumeModifyRequest)
 	 */
 	@Override
 	public ResumeOperateResult modify(ResumeModifyRequest request) {

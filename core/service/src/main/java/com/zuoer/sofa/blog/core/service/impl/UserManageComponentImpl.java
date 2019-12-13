@@ -4,17 +4,15 @@
  */
 package com.zuoer.sofa.blog.core.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.zuoer.sofa.blog.base.utils.ConverterUtils;
-import com.zuoer.sofa.blog.base.utils.StringUtils;
 import com.zuoer.sofa.blog.core.model.enums.ErrorCodeEnum;
-import com.zuoer.sofa.blog.core.model.request.UserRegisterRequest;
-import com.zuoer.sofa.blog.core.model.result.UserOperateResult;
 import com.zuoer.sofa.blog.core.service.UserManageComponent;
 import com.zuoer.sofa.blog.dal.entity.UserDO;
 import com.zuoer.sofa.blog.dal.mapper.UserMapper;
+import com.zuoer.sofa.blog.facade.api.request.UserRegisterRequest;
+import com.zuoer.sofa.blog.facade.api.result.UserOperateResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * 
@@ -29,7 +27,7 @@ public class UserManageComponentImpl implements UserManageComponent {
 	private UserMapper userMapper;
 	
 	/* (non-Javadoc)
-	 * @see com.zuoer.sofa.blog.core.service.UserManageComponent#register(com.zuoer.sofa.blog.core.model.request.UserRegisterRequest)
+	 * @see com.zuoer.sofa.blog.core.service.UserManageComponent#register(com.zuoer.sofa.blog.facade.api.request.UserRegisterRequest)
 	 */
 	@Override
 	public UserOperateResult register(UserRegisterRequest request) {

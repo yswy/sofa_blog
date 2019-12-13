@@ -4,14 +4,6 @@
  */
 package com.zuoer.sofa.blog.core.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.zuoer.sofa.blog.core.model.request.ArticleCreateRequest;
-import com.zuoer.sofa.blog.core.model.request.ArticleModifyRequest;
-import com.zuoer.sofa.blog.core.model.result.ArticleOperateResult;
 import com.zuoer.sofa.blog.core.service.ArticleManageComponent;
 import com.zuoer.sofa.blog.dal.entity.ArticleDO;
 import com.zuoer.sofa.blog.dal.entity.TagArticleDO;
@@ -19,6 +11,13 @@ import com.zuoer.sofa.blog.dal.entity.TagDO;
 import com.zuoer.sofa.blog.dal.mapper.ArticleMapper;
 import com.zuoer.sofa.blog.dal.mapper.TagArticleMapper;
 import com.zuoer.sofa.blog.dal.mapper.TagMapper;
+import com.zuoer.sofa.blog.facade.api.request.ArticleCreateRequest;
+import com.zuoer.sofa.blog.facade.api.request.ArticleModifyRequest;
+import com.zuoer.sofa.blog.facade.api.result.ArticleOperateResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * 
@@ -41,7 +40,7 @@ public class ArticleManageComponentImpl implements ArticleManageComponent {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.zuoer.sofa.blog.core.service.ArticleManageComponent#create(com.zuoer.sofa.blog.core.model.request.ArticleCreateRequest)
+	 * @see com.zuoer.sofa.blog.core.service.ArticleManageComponent#create(com.zuoer.sofa.blog.facade.api.request.ArticleCreateRequest)
 	 */
 	@Override
 	public ArticleOperateResult create(ArticleCreateRequest request) {
@@ -76,7 +75,7 @@ public class ArticleManageComponentImpl implements ArticleManageComponent {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.zuoer.sofa.blog.core.service.ArticleManageComponent#modify(com.zuoer.sofa.blog.core.model.request.ArticleModifyRequest)
+	 * @see com.zuoer.sofa.blog.core.service.ArticleManageComponent#modify(com.zuoer.sofa.blog.facade.api.request.ArticleModifyRequest)
 	 */
 	@Override
 	public ArticleOperateResult modify(ArticleModifyRequest request) {

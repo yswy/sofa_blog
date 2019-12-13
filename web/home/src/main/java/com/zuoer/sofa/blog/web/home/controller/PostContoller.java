@@ -1,22 +1,20 @@
 package com.zuoer.sofa.blog.web.home.controller;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.zuoer.sofa.blog.core.model.Article;
+import com.zuoer.sofa.blog.core.model.Tag;
+import com.zuoer.sofa.blog.core.service.ArticleQueryComponent;
+import com.zuoer.sofa.blog.core.service.TagQueryComponent;
+import com.zuoer.sofa.blog.facade.api.request.ArticleSearchRequest;
+import com.zuoer.sofa.blog.web.home.controller.base.BaseController;
+import com.zuoer.sofa.blog.web.home.form.ArticleSearchForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.zuoer.sofa.blog.core.model.Article;
-import com.zuoer.sofa.blog.core.model.Tag;
-import com.zuoer.sofa.blog.core.model.request.ArticleSearchRequest;
-import com.zuoer.sofa.blog.core.service.ArticleQueryComponent;
-import com.zuoer.sofa.blog.core.service.TagQueryComponent;
-import com.zuoer.sofa.blog.web.home.controller.base.BaseController;
-import com.zuoer.sofa.blog.web.home.form.ArticleSearchForm;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 博客控制器

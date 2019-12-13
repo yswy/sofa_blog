@@ -15,11 +15,11 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.zuoer.sofa.blog.base.exception.BaseRuntimeException;
 import org.apache.commons.lang.CharUtils;
 import org.springframework.lang.Nullable;
 
 import com.zuoer.sofa.blog.base.error.ErrorCode;
-import com.zuoer.sofa.blog.base.exception.BenchRuntimeException;
 
 
 /**
@@ -167,7 +167,7 @@ public class StringUtils extends org.apache.commons.lang.StringUtils {
 			return null;
 		}
 		if (StringUtils.isEmpty(charset)) {
-			throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "charset不能为空");
+			throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "charset不能为空");
 		}
 		try {
 			return string.getBytes(charset);
@@ -5497,7 +5497,7 @@ public class StringUtils extends org.apache.commons.lang.StringUtils {
 			} else if (fillType.equals(FILL_TYPE_SUFFIX)) {
 				buf.append(filler);
 			} else {
-				throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "无法识别的fillType：" + fillType);
+				throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "无法识别的fillType：" + fillType);
 			}
 		}
 		return buf.toString();
@@ -6396,7 +6396,7 @@ public class StringUtils extends org.apache.commons.lang.StringUtils {
 			for (char c : totalString.toCharArray()) {
 				String currentString = new String(new char[] { c });
 				if (currentString.getBytes().length > eachByteLength) {
-					throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"),
+					throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"),
 							"无法拆分成最小的字节长度,eachByteLength=" + eachByteLength + ",currentString=" + currentString + ",string=" + totalString);
 				}
 				returnList.add(currentString);
@@ -6412,7 +6412,7 @@ public class StringUtils extends org.apache.commons.lang.StringUtils {
 					|| StringUtils.isEmpty(remainString))) {
 				int index = bytesString.lastIndexOf(joinChar);
 				if (index < 0) {
-					throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"),
+					throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"),
 							"无法拆分成最小的字节长度,eachByteLength=" + eachByteLength + ",currentString=" + bytesString + ",string=" + totalString);
 				}
 				bytesString = bytesString.substring(0, index + 1);
@@ -6464,7 +6464,7 @@ public class StringUtils extends org.apache.commons.lang.StringUtils {
 			for (char c : totalString.toCharArray()) {
 				String currentString = new String(new char[] { c });
 				if (currentString.getBytes().length > eachByteLength) {
-					throw new BenchRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"),
+					throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"),
 							"无法拆分成最小的字节长度,eachByteLength=" + eachByteLength + ",currentString=" + currentString + ",string=" + totalString);
 				}
 				returnList.add(currentString);

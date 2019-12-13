@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>${title!'全栈之路 - 摆码王子的个人博客'}</title>
+    <title>${title!'左耳的个人博客'}</title>
 
     <!-- Custom styles for this template -->
     <link href="/css/full-slider/full-slider.css" rel="stylesheet">
@@ -74,7 +74,7 @@
 <!-- Page Content -->
 <section class="py-5">
     <div class="container container-fluid">
-        <h1>全栈之路 —— 摆码王子的个人博客</h1>
+        <h1>左耳的个人博客12</h1>
     </div>
 </section>
 

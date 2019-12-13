@@ -4,10 +4,10 @@
  */
 package com.zuoer.sofa.blog.core.service;
 
-import java.util.List;
-
 import com.zuoer.sofa.blog.core.model.Article;
-import com.zuoer.sofa.blog.core.model.request.ArticleSearchRequest;
+import com.zuoer.sofa.blog.facade.api.request.ArticleSearchRequest;
+
+import java.util.List;
 
 /**
  * 文章查询组件

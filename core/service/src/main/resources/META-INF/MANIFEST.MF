@@ -1,1 +1,2 @@
 Module-Name: com.zuoer.sofa.blog.core.service
+Require-Bundle: com.zuoer.sofa.blog.integration

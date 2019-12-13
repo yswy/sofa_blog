@@ -25,6 +25,10 @@
         </dependency>
 		<dependency>
 			<groupId>com.zuoer</groupId>
+			<artifactId>sofa-blog-facade-api</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>com.zuoer</groupId>
 			<artifactId>sofa-blog-integration</artifactId>
         </dependency>
     </dependencies>

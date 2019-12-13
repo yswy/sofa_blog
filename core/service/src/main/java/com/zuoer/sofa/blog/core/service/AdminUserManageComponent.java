@@ -4,10 +4,11 @@
  */
 package com.zuoer.sofa.blog.core.service;
 
-import java.util.List;
 
-import com.zuoer.sofa.blog.core.model.request.AdminUserPasswordModifyRequest;
-import com.zuoer.sofa.blog.core.model.result.AdminUserOperateResult;
+import com.zuoer.sofa.blog.facade.api.request.AdminUserPasswordModifyRequest;
+import com.zuoer.sofa.blog.facade.api.result.AdminUserOperateResult;
+
+import java.util.List;
 
 /**
  * 管理员用户查询组件

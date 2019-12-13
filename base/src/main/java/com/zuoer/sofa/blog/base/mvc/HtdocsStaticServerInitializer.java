@@ -16,7 +16,7 @@
 //
 //import com.bench.common.enums.CommonErrorCodeEnum;
 //import com.bench.common.lang.StringUtils;
-//import com.bench.common.lang.exception.BenchRuntimeException;
+//import com.bench.common.lang.exception.BaseRuntimeException;
 //import com.bench.runtime.core.BenchRuntime;
 //import com.bench.runtime.core.configuration.BenchConfiguration;
 //import com.bench.runtime.core.lifecycle.BenchLifeCycle;
@@ -46,7 +46,7 @@
 //			factory.setPort(BenchConfiguration.getInstance().getWeb().getHtdocsStaticServerPort());
 //			File htdocsStaticPath = new File(BenchConfiguration.getInstance().getWeb().getHtdocsStaticPath());
 //			if (!htdocsStaticPath.exists()) {
-//				throw new BenchRuntimeException(CommonErrorCodeEnum.SYSTEM_CONFIG_ERROR, "不存在的htdocs-static资源目录:" + htdocsStaticPath.getPath());
+//				throw new BaseRuntimeException(CommonErrorCodeEnum.SYSTEM_CONFIG_ERROR, "不存在的htdocs-static资源目录:" + htdocsStaticPath.getPath());
 //			}
 //			factory.setDocumentRoot(htdocsStaticPath);
 //			factory.getDeploymentInfoCustomizers().add(new UndertowDeploymentInfoCustomizer() {

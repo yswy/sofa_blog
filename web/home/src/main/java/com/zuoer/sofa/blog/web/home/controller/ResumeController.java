@@ -16,6 +16,14 @@
  */
 package com.zuoer.sofa.blog.web.home.controller;
 
+import com.zuoer.sofa.blog.base.json.JsonOutputResult;
+import com.zuoer.sofa.blog.core.model.Resume;
+import com.zuoer.sofa.blog.core.service.ResumeManageComponent;
+import com.zuoer.sofa.blog.core.service.ResumeQueryComponent;
+import com.zuoer.sofa.blog.facade.api.request.ResumeModifyRequest;
+import com.zuoer.sofa.blog.facade.api.result.ResumeOperateResult;
+import com.zuoer.sofa.blog.web.home.controller.base.BaseController;
+import com.zuoer.sofa.blog.web.home.form.ResumeModifyForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,15 +31,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.zuoer.sofa.blog.base.json.JsonOutputResult;
-import com.zuoer.sofa.blog.core.model.Resume;
-import com.zuoer.sofa.blog.core.model.request.ResumeModifyRequest;
-import com.zuoer.sofa.blog.core.model.result.ResumeOperateResult;
-import com.zuoer.sofa.blog.core.service.ResumeManageComponent;
-import com.zuoer.sofa.blog.core.service.ResumeQueryComponent;
-import com.zuoer.sofa.blog.web.home.controller.base.BaseController;
-import com.zuoer.sofa.blog.web.home.form.ResumeModifyForm;
 
 /**
  * @author JamesZBL

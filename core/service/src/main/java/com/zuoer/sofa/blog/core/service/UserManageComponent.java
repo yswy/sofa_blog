@@ -4,8 +4,9 @@
  */
 package com.zuoer.sofa.blog.core.service;
 
-import com.zuoer.sofa.blog.core.model.request.UserRegisterRequest;
-import com.zuoer.sofa.blog.core.model.result.UserOperateResult;
+
+import com.zuoer.sofa.blog.facade.api.request.UserRegisterRequest;
+import com.zuoer.sofa.blog.facade.api.result.UserOperateResult;
 
 /**
  * 用户管理组件
