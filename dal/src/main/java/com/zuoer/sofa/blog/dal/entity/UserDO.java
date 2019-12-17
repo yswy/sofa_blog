@@ -46,7 +46,7 @@ public class UserDO {
 	/**
 	 * 等级
 	 */
-	private Integer level;
+	private Integer userLevel;
 
 	private Date gmtCreate;
 
@@ -146,12 +146,12 @@ public class UserDO {
 		this.status = status;
 	}
 
-	public Integer getLevel() {
-		return level;
+	public Integer getUserLevel() {
+		return userLevel;
 	}
 
-	public void setLevel(Integer level) {
-		this.level = level;
+	public void setUserLevel(Integer userLevel) {
+		this.userLevel = userLevel;
 	}
 
 	public Date getGmtCreate() {

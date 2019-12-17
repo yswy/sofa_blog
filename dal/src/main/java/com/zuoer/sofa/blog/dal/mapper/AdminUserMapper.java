@@ -17,7 +17,7 @@ public interface AdminUserMapper extends CommonMybatisMapper<AdminUserDO,Integer
 	@Select({
 			"SELECT ",
 			ALL_COLUMN_STR,
-			" FROM tag WHERE `userName` = #{userName}"
+			" FROM admin_user WHERE username = #{userName}"
 	})
 	public AdminUserDO selectByUserName(String userName);
 }

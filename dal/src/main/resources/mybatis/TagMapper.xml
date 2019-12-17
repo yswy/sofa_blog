@@ -5,7 +5,7 @@
         <!--
           WARNING - @mbg.generated
         -->
-        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="id" jdbcType="INTEGER" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"/>
         <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"/>
@@ -19,10 +19,10 @@
     </delete>
     <insert id="insert" parameterType="com.zuoer.sofa.blog.dal.entity.TagDO">
 		insert into tag(  id,name,  gmt_create, gmt_modified)
-		 values (#{id},#{username},#{password},#{birthDate},#{nickname},#{email},#{github},#{qq},#{wecaht},#{avatar},sysdate,sysdate,#{hobby},#{motto},#{md_info})
+		 values (seq_tag.nextval,#{anme,jdbcType=VARCHAR},sysdate,sysdate)
     </insert>
     <update id="updateById" parameterType="com.zuoer.sofa.blog.dal.entity.TagDO">
-        update tag set title=#{title}, introduction=#{introduction}, md_material=#{mdMaterial}, html_material=#{htmlMaterial}, gmt_modified=sysdate where  id = #{id}
+        update tag set name=#{name,jdbcType=VARCHAR},  gmt_modified=sysdate where  id = #{id,jdbcType=INTEGER}
     </update>
     <select id="selectByIds" resultMap="BaseResultMap">
         select id,name,  gmt_create, gmt_modified  from tag

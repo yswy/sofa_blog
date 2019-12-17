@@ -5,10 +5,10 @@
         <!--
           WARNING - @mbg.generated
         -->
-        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="id" jdbcType="INTEGER" property="id"/>
         <result column="username" jdbcType="VARCHAR" property="username"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
-        <result column="birth_date" jdbcType="DATE" property="birthDate"/>
+        <result column="birth_date" jdbcType="TIMESTAMP" property="birthDate"/>
         <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
         <result column="email" jdbcType="VARCHAR" property="email"/>
         <result column="github" jdbcType="VARCHAR" property="github"/>
@@ -30,12 +30,12 @@
     </delete>
     <insert id="insert" parameterType="com.zuoer.sofa.blog.dal.entity.AdminUserDO">
 		insert into admin_user(  id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info)
-		 values (#{id},#{username},#{password},#{birthDate},#{nickname},#{email},#{github},#{qq},#{wecaht},#{avatar},sysdate,sysdate,#{hobby},#{motto},#{md_info})
+		 values (seq_admin_user.nextval,#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{birthDate,jdbcType=TIMESTAMP},#{nickname,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR},#{github,jdbcType=VARCHAR},#{qq,jdbcType=VARCHAR},#{wecaht,jdbcType=VARCHAR},#{avatar,jdbcType=VARCHAR},sysdate,sysdate,#{hobby,jdbcType=VARCHAR},#{motto,jdbcType=VARCHAR},#{mdInfo,jdbcType=VARCHAR})
     </insert>
     <update id="updateById" parameterType="com.zuoer.sofa.blog.dal.entity.AdminUserDO">
-        update admin_user set username=#{username}, password=#{password}, birth_date=#{birthDate}, nickname=#{nickname},
-        email=#{email}, github=#{github}, qq=#{qq}, wecaht=#{wecaht}, avatar=#{avatar}, gmt_modified=sysdate,
-        hobby=#{hobby}, motto=#{motto}, md_info=#{md_info} where  id = #{id}
+        update admin_user set username=#{username,jdbcType=VARCHAR}, password=#{password,jdbcType=VARCHAR}, birth_date=#{birthDate,jdbcType=TIMESTAMP}, nickname=#{nickname,jdbcType=VARCHAR},
+        email=#{email,jdbcType=VARCHAR}, github=#{github,jdbcType=VARCHAR}, qq=#{qq,jdbcType=VARCHAR}, wecaht=#{wecaht,jdbcType=VARCHAR}, avatar=#{avatar,jdbcType=VARCHAR}, gmt_modified=sysdate,
+        hobby=#{hobby,jdbcType=VARCHAR}, motto=#{motto,jdbcType=VARCHAR}, md_info=#{mdInfo,jdbcType=VARCHAR} where  id = #{id,jdbcType=INTEGER}
     </update>
     <select id="selectByIds" resultMap="BaseResultMap">
         select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create,

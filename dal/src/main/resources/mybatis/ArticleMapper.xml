@@ -5,13 +5,13 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="id" jdbcType="INTEGER" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-    <result column="introduction" jdbcType="LONGVARCHAR" property="introduction" />
-    <result column="md_material" jdbcType="LONGVARCHAR" property="mdMaterial" />
-    <result column="html_material" jdbcType="LONGVARCHAR" property="htmlMaterial" />
+    <result column="introduction" jdbcType="VARCHAR" property="introduction" />
+    <result column="md_material" jdbcType="VARCHAR" property="mdMaterial" />
+    <result column="html_material" jdbcType="VARCHAR" property="htmlMaterial" />
   </resultMap>
 
   <select id="selectById" resultMap="BaseResultMap">
@@ -22,10 +22,10 @@
     </delete>
   <insert id="insert" parameterType="com.zuoer.sofa.blog.dal.entity.ArticleDO">
 		insert into article(  id, title,  gmt_create, gmt_modified, introduction, md_material, html_material)
-		 values (#{id},#{username},#{password},#{birthDate},#{nickname},#{email},#{github},#{qq},#{wecaht},#{avatar},sysdate,sysdate,#{hobby},#{motto},#{md_info})
+		 values (seq_article.nextval,#{title,jdbcType=VARCHAR},sysdate,sysdate,#{introduction,jdbcType=VARCHAR},#{mdMaterial,jdbcType=VARCHAR},#{htmlMaterial,jdbcType=VARCHAR})
     </insert>
   <update id="updateById" parameterType="com.zuoer.sofa.blog.dal.entity.ArticleDO">
-        update article set title=#{title}, introduction=#{introduction}, md_material=#{mdMaterial}, html_material=#{htmlMaterial}, gmt_modified=sysdate where  id = #{id}
+        update article set title=#{title,jdbcType=VARCHAR}, introduction=#{introduction,jdbcType=VARCHAR}, md_material=#{mdMaterial,jdbcType=VARCHAR}, html_material=#{htmlMaterial,jdbcType=VARCHAR}, gmt_modified=sysdate where  id = #{id,jdbcType=INTEGER}
     </update>
   <select id="selectByIds" resultMap="BaseResultMap">
     select id, title,  gmt_create, gmt_modified, introduction, md_material, html_material  from article

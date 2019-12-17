@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface UserMapper extends CommonMybatisMapper<UserDO,Integer> {
 
-	String ALL_COLUMN_STR="id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info";
+	String ALL_COLUMN_STR="id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar,status,user_level, gmt_create, gmt_modified, hobby, motto, md_info";
 
 
 	/**
@@ -19,7 +19,7 @@ public interface UserMapper extends CommonMybatisMapper<UserDO,Integer> {
 	@Select({
 			"SELECT ",
 			ALL_COLUMN_STR,
-			" FROM tag WHERE `userName` = #{userName}"
+			" FROM user_base WHERE username = #{userName}"
 	})
 	public UserDO selectByUserName(String userName);
 }

@@ -5,9 +5,9 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <id column="tag_id" jdbcType="INTEGER" property="tagId" />
-    <id column="article_id" jdbcType="INTEGER" property="articleId" />
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="tag_id" jdbcType="INTEGER" property="tagId" />
+    <result column="article_id" jdbcType="INTEGER" property="articleId" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
   </resultMap>
@@ -20,10 +20,10 @@
     </delete>
   <insert id="insert" parameterType="com.zuoer.sofa.blog.dal.entity.TagArticleDO">
 		insert into tag_article(  id,article_id, tag_id,  gmt_create, gmt_modified)
-		 values (#{id},#{username},#{password},#{birthDate},#{nickname},#{email},#{github},#{qq},#{wecaht},#{avatar},sysdate,sysdate,#{hobby},#{motto},#{md_info})
+		 values (seq_tag_article.nextval,#{articleId,jdbcType=INTEGER},#{tagId,jdbcType=INTEGER},sysdate,sysdate)
     </insert>
   <update id="updateById" parameterType="com.zuoer.sofa.blog.dal.entity.TagArticleDO">
-        update tag_article set title=#{title}, introduction=#{introduction}, md_material=#{mdMaterial}, html_material=#{htmlMaterial}, gmt_modified=sysdate where  id = #{id}
+        update tag_article set article_id=#{articleId,jdbcType=INTEGER}, tag_id=#{tagId,jdbcType=INTEGER}, gmt_modified=sysdate where  id = #{id,jdbcType=INTEGER}
     </update>
   <select id="selectByIds" resultMap="BaseResultMap">
     select id,article_id, tag_id,  gmt_create, gmt_modified  from tag_article
