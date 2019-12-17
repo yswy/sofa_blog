@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="me.zbl.fullstack.mapper.ArticleMapper">
+<mapper namespace="com.zuoer.sofa.blog.dal.mapper.ArticleMapper">
   <resultMap id="BaseResultMap" type="com.zuoer.sofa.blog.dal.entity.ArticleDO">
     <!--
       WARNING - @mbg.generated
