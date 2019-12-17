@@ -7,13 +7,6 @@ package com.zuoer.sofa.blog.base.rpc;
 public interface RpcServiceComponent {
 
     /**
-     * 发布服务
-     * @param serviceClass
-     * @param <T>
-     */
-    public <T> void publicSerice(Class<T> serviceClass);
-
-    /**
      * 获取服务
      * @param serviceClass
      * @param <T>

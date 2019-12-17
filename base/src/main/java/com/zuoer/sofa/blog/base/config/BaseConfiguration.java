@@ -1,7 +1,7 @@
 package com.zuoer.sofa.blog.base.config;
 
-import com.alipay.sofa.rpc.server.bolt.BoltServer;
-import com.alipay.sofa.rpc.server.rest.RestServer;
+import com.alipay.sofa.rpc.config.RegistryConfig;
+import com.alipay.sofa.rpc.config.ServerConfig;
 
 /**
  * @author zuoer
@@ -11,9 +11,15 @@ public class BaseConfiguration {
 
     public static final BaseConfiguration INSTANCE = new BaseConfiguration();
 
-    private RestServer restServer;
+    /**
+     * rpc服务配置
+     */
+    private ServerConfig serverConfig;
 
-    private BoltServer boltServer;
+    /**
+     * 注册中心
+     */
+    private RegistryConfig registryConfig;
 
     /**
      * 返回实例
@@ -24,19 +30,19 @@ public class BaseConfiguration {
         return INSTANCE;
     }
 
-    public RestServer getRestServer() {
-        return restServer;
+    public ServerConfig getServerConfig() {
+        return serverConfig;
     }
 
-    public void setRestServer(RestServer restServer) {
-        this.restServer = restServer;
+    public void setServerConfig(ServerConfig serverConfig) {
+        this.serverConfig = serverConfig;
     }
 
-    public BoltServer getBoltServer() {
-        return boltServer;
+    public RegistryConfig getRegistryConfig() {
+        return registryConfig;
     }
 
-    public void setBoltServer(BoltServer boltServer) {
-        this.boltServer = boltServer;
+    public void setRegistryConfig(RegistryConfig registryConfig) {
+        this.registryConfig = registryConfig;
     }
 }

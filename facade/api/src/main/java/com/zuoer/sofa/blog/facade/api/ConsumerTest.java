@@ -1,6 +1,7 @@
 package com.zuoer.sofa.blog.facade.api;
 
 import com.alipay.sofa.rpc.config.ConsumerConfig;
+import com.alipay.sofa.rpc.config.RegistryConfig;
 import com.zuoer.sofa.blog.facade.api.request.HelloRequest;
 
 /**
@@ -11,10 +12,16 @@ public class ConsumerTest {
 
     public static void main(String[] args) {
 
+        RegistryConfig registryConfig = new RegistryConfig()
+                .setProtocol("zookeeper")
+                .setAddress("192.168.10.120:2181");
+
+
         ConsumerConfig<HelloFacade> consumerConfig = new ConsumerConfig<HelloFacade>()
                 .setInterfaceId(HelloFacade.class.getName()) // 指定接口
                 .setProtocol("bolt") // 指定协议
-                .setDirectUrl("bolt://192.168.10.120:12200"); // 指定直连地址
+                .setRegistry(registryConfig);//用注册中心
+//                .setDirectUrl("bolt://127.0.0.1:12200"); // 指定直连地址
         // 生成代理类
         HelloFacade helloService = consumerConfig.refer();
         System.out.println(helloService.helloStr("ceshi "));
@@ -27,7 +34,8 @@ public class ConsumerTest {
         ConsumerConfig<ByeFacade> consumerConfig2 = new ConsumerConfig<ByeFacade>()
                 .setInterfaceId(ByeFacade.class.getName()) // 指定接口
                 .setProtocol("bolt") // 指定协议
-                .setDirectUrl("bolt://192.168.10.120:12200"); // 指定直连地址
+                .setRegistry(registryConfig);//用注册中心
+//                .setDirectUrl("bolt://127.0.0.1:12200"); // 指定直连地址
         // 生成代理类
         ByeFacade byeFacade = consumerConfig2.refer();
         System.out.println(byeFacade.byeStr("ceshi "));
