@@ -2,6 +2,7 @@ package com.zuoer.sofa.blog.base.config;
 
 import com.alipay.sofa.rpc.config.RegistryConfig;
 import com.alipay.sofa.rpc.config.ServerConfig;
+import com.zuoer.sofa.blog.base.datasource.DataSourceConfig;
 
 /**
  * @author zuoer
@@ -20,6 +21,11 @@ public class BaseConfiguration {
      * 注册中心
      */
     private RegistryConfig registryConfig;
+
+    /**
+     * 数据源配置
+     */
+    private DataSourceConfig dataSourceConfig;
 
     /**
      * 返回实例
@@ -44,5 +50,13 @@ public class BaseConfiguration {
 
     public void setRegistryConfig(RegistryConfig registryConfig) {
         this.registryConfig = registryConfig;
+    }
+
+    public DataSourceConfig getDataSourceConfig() {
+        return dataSourceConfig;
+    }
+
+    public void setDataSourceConfig(DataSourceConfig dataSourceConfig) {
+        this.dataSourceConfig = dataSourceConfig;
     }
 }

@@ -2,12 +2,12 @@ package com.zuoer.sofa.blog.base;
 
 import com.zuoer.sofa.blog.base.error.ErrorCode;
 import com.zuoer.sofa.blog.base.exception.BaseRuntimeException;
+import com.zuoer.sofa.blog.base.utils.ListUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.net.URLClassLoader;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,11 +33,11 @@ public class BaseClassUtils {
      * @return
      */
     public static List<Class<?>> getClasses() {
-        if (baseClassList != null) {
+        if ( !ListUtils.isEmpty(baseClassList)) {
             return baseClassList;
         }
         synchronized (baseClassesLock) {
-            if (baseClassList != null) {
+            if (!ListUtils.isEmpty(baseClassList)) {
                 return baseClassList;
             }
             try {
@@ -70,10 +70,12 @@ public class BaseClassUtils {
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
         String packagePath = packageName.replace(".", "/");
         Enumeration<URL> urls = loader.getResources(packagePath);
+        List<URL> urlList=new ArrayList<>();
         while (urls.hasMoreElements()) {
             URL url = urls.nextElement();
             if (url == null)
                 continue;
+            urlList.add(url);
             String type = url.getProtocol();
             if (type.equals("file")) {
                 fileNames.addAll(getClassNameByFile(url.getPath(), childPackage));
@@ -81,7 +83,8 @@ public class BaseClassUtils {
                 fileNames.addAll(getClassNameByJar(url.getPath(), childPackage));
             }
         }
-        fileNames.addAll(getClassNameByJars(((URLClassLoader) loader).getURLs(), packagePath, childPackage));
+
+        fileNames.addAll(getClassNameByJars(urlList, packagePath, childPackage));
         return fileNames;
     }
 
@@ -110,8 +113,8 @@ public class BaseClassUtils {
                 String childFilePath = childFile.getPath();
 //                childFilePath = FileUtil.clearPath(childFilePath);
                 if (childFilePath.endsWith(".class")) {
-                    childFilePath = childFilePath.substring(childFilePath.indexOf("/classes/") + 9, childFilePath.lastIndexOf("."));
-                    childFilePath = childFilePath.replace("/", ".");
+                    childFilePath = childFilePath.substring(childFilePath.indexOf("classes") + 8, childFilePath.lastIndexOf("."));
+                    childFilePath = childFilePath.replace("\\", ".");
                     myClassName.add(childFilePath);
                 }
             }
@@ -175,11 +178,11 @@ public class BaseClassUtils {
      * @return 类的完整名称
      * @throws UnsupportedEncodingException
      */
-    private static List<String> getClassNameByJars(URL[] urls, String packagePath, boolean childPackage) throws UnsupportedEncodingException {
+    private static List<String> getClassNameByJars(List<URL> urls, String packagePath, boolean childPackage) throws UnsupportedEncodingException {
         List<String> myClassName = new ArrayList<String>();
         if (urls != null) {
-            for (int i = 0; i < urls.length; i++) {
-                URL url = urls[i];
+            for (int i = 0; i < urls.size(); i++) {
+                URL url = urls.get(i);
                 String urlPath = url.getPath();
                 // 不必搜索classes文件夹
                 if (urlPath.endsWith("classes/")) {

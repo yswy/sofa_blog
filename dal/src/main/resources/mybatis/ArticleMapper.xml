@@ -34,6 +34,10 @@
       #{id}
     </foreach>
   </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, title,  gmt_create, gmt_modified, introduction, md_material, html_material  from article
+  </select>
   <delete id="deleteByIds">
     delete from article where
     <foreach collection="ids" item="id" open=" id in(" close=")" separator=",">

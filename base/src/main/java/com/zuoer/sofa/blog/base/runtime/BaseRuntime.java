@@ -45,7 +45,7 @@ public class BaseRuntime {
     /**
      * 生命周期
      */
-    private BaseRuntimeLifeCycle lifeCycle;
+    private BaseRuntimeLifeCycle lifeCycle=BaseRuntimeLifeCycle.getInstance();
 
     /**
      * 运行的应用

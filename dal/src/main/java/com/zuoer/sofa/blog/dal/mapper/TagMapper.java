@@ -2,6 +2,7 @@ package com.zuoer.sofa.blog.dal.mapper;
 
 import java.util.List;
 
+import com.zuoer.sofa.blog.base.mybatis.CommonMybatisMapper;
 import org.apache.ibatis.annotations.Select;
 
 import com.zuoer.sofa.blog.dal.entity.ArticleDO;

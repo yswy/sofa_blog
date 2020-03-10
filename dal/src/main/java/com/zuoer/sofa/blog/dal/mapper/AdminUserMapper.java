@@ -1,5 +1,6 @@
 package com.zuoer.sofa.blog.dal.mapper;
 
+import com.zuoer.sofa.blog.base.mybatis.CommonMybatisMapper;
 import com.zuoer.sofa.blog.dal.entity.AdminUserDO;
 import org.apache.ibatis.annotations.Select;
 

@@ -2,7 +2,7 @@
  * BenchCode.com Inc.
  * Copyright (c) 2005-2009 All Rights Reserved.
  */
-package com.zuoer.sofa.blog.dal.mapper;
+package com.zuoer.sofa.blog.base.mybatis;
 
 import java.util.List;
 
@@ -61,7 +61,7 @@ public interface CommonMybatisMapper<T,PKTYPE> {
 	
 	/**
 	 * 批量插入
-	 * @param dbDo
+	 * @param dbDoList
 	 * @return
 	 */
 	public PKTYPE insertBatch(List<T> dbDoList);

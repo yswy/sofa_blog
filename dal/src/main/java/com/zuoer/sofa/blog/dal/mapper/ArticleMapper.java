@@ -1,10 +1,10 @@
 package com.zuoer.sofa.blog.dal.mapper;
 
-import java.util.List;
-
+import com.zuoer.sofa.blog.base.mybatis.CommonMybatisMapper;
+import com.zuoer.sofa.blog.dal.entity.ArticleDO;
 import org.apache.ibatis.annotations.Select;
 
-import com.zuoer.sofa.blog.dal.entity.ArticleDO;
+import java.util.List;
 
 /**
  * @author James
@@ -20,7 +20,7 @@ public interface ArticleMapper extends CommonMybatisMapper<ArticleDO,Integer> {
                   "article",
                   "ORDER BY article.gmt_create DESC"
           })
-  List<ArticleDO> getPostViewAllArticles();
+  List<ArticleDO> selectPostViewAllArticles();
 
   /**
    * 通过 tag id 查找文章
@@ -38,7 +38,7 @@ public interface ArticleMapper extends CommonMybatisMapper<ArticleDO,Integer> {
                   "AND tag_article.tag_id=#{id}",
                   "ORDER BY article.gmt_create DESC"
           })
-  List<ArticleDO> getArticleListByTagId(Integer id);
+  List<ArticleDO> selectArticleListByTagId(Integer id);
 
   /**
    * 通过条件查找文章

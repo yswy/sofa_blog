@@ -2,9 +2,10 @@ package com.zuoer.sofa.blog.base.loader;
 
 import com.alipay.sofa.rpc.config.RegistryConfig;
 import com.alipay.sofa.rpc.config.ServerConfig;
-import com.zuoer.sofa.blog.base.BaseLifeCycle;
 import com.zuoer.sofa.blog.base.config.BaseConfiguration;
-import com.zuoer.sofa.blog.base.runtime.BaseRuntime;
+import com.zuoer.sofa.blog.base.datasource.DataSourceConfig;
+import com.zuoer.sofa.blog.base.order.Ordered;
+import com.zuoer.sofa.blog.base.runtime.initializer.RuntimeInitializer;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,18 +15,19 @@ import org.springframework.stereotype.Component;
  * @version $Id: BaseConfigurationLoader.java, v 0.1 2019/12/13 9:54 zuoer Exp $$
  */
 @Component
-public class BaseConfigurationLoader implements BaseLifeCycle {
+public class BaseConfigurationLoader implements RuntimeInitializer {
 
     @Override
-    public void loading(BaseRuntime runtime) throws Exception {
+    public void initialize() {
 
         BaseConfiguration baseConfiguration = BaseConfiguration.getInstance();
-
+        System.out.println("初始化注册中心");
         //设置注册中心
-        RegistryConfig registryConfig=new RegistryConfig();
-        registryConfig.setAddress("192.168.10.120:2181");
+        RegistryConfig registryConfig = new RegistryConfig();
+        registryConfig.setAddress("98-2.zookeeper:2181");
         registryConfig.setProtocol("zookeeper");
         baseConfiguration.setRegistryConfig(registryConfig);
+        System.out.println("初始rpc服务");
         //设置rpc服务配置
         ServerConfig boltServerConfig = new ServerConfig()
                 .setProtocol("bolt") // 设置一个协议，默认bolt
@@ -33,5 +35,17 @@ public class BaseConfigurationLoader implements BaseLifeCycle {
                 .setDaemon(false); // 非守护线程
         baseConfiguration.setServerConfig(boltServerConfig);
 
+        System.out.println("初始化datasource");
+        DataSourceConfig dataSourceConfig = new DataSourceConfig();
+        dataSourceConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+        dataSourceConfig.setPassword("zuoer_test");
+        dataSourceConfig.setUrl("jdbc:oracle:thin:@10.0.0.91:1521/dev");
+        dataSourceConfig.setUsername("zuoer_test");
+        baseConfiguration.setDataSourceConfig(dataSourceConfig);
+    }
+
+    @Override
+    public int order() {
+        return Ordered.HIGHEST_PRECEDENCE;
     }
 }

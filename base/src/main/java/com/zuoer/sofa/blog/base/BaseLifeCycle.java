@@ -1,12 +1,13 @@
 package com.zuoer.sofa.blog.base;
 
+import com.zuoer.sofa.blog.base.order.Ordered;
 import com.zuoer.sofa.blog.base.runtime.BaseRuntime;
 
 /**
  * @author zuoer
  * @version $Id: BaseLifeCycle.java, v 0.1 2019/12/12 9:57 zuoer Exp $$
  */
-public interface BaseLifeCycle {
+public interface BaseLifeCycle extends Ordered {
     /**
      * 系统正在配置，此时可以进行系统调整，如注册spring bean，容器未加载
      *
@@ -114,5 +115,11 @@ public interface BaseLifeCycle {
      */
     public default void failed(BaseRuntime runtime) {
 
+    }
+
+    @Override
+    default int order() {
+        // TODO Auto-generated method stub
+        return Ordered.DEFAULT_ORDER;
     }
 }

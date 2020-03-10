@@ -3,6 +3,7 @@ package com.zuoer.sofa.blog.base.runtime.lifeCycle;
 import com.zuoer.sofa.blog.base.BaseLifeCycle;
 import com.zuoer.sofa.blog.base.error.ErrorCode;
 import com.zuoer.sofa.blog.base.exception.BaseRuntimeException;
+import com.zuoer.sofa.blog.base.order.comparator.OrderedComparator;
 import com.zuoer.sofa.blog.base.runtime.BaseRuntime;
 import com.zuoer.sofa.blog.base.runtime.initializer.RuntimeInitializer;
 import com.zuoer.sofa.blog.base.runtime.status.RuntimeStatusEnum;
@@ -12,10 +13,12 @@ import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * 基础生命周期
+ *
  * @author zuoer
  * @version $Id: BaseRuntimeLifeCycle.java, v 0.1 2019/12/12 9:49 zuoer Exp $$
  */
@@ -66,7 +69,7 @@ public class BaseRuntimeLifeCycle {
     public void init() {
         BaseRuntime.getInstance().setStatus(RuntimeStatusEnum.STARTING);
         //  TODO 排序
-//        Collections.sort(this.runtimeInitializers, OrderedComparator.INSTANCE);
+        Collections.sort(this.runtimeInitializers, OrderedComparator.INSTANCE);
         System.out.println("进行初始化....");
         for (RuntimeInitializer initializer : this.runtimeInitializers) {
             long start = System.currentTimeMillis();
@@ -90,7 +93,7 @@ public class BaseRuntimeLifeCycle {
         // 生命周期
         lifeCycles = new ArrayList<BaseLifeCycle>(BaseRuntime.getInstance().getContext().getBeansOfType(BaseLifeCycle.class).values());
         // TODO 排序
-//        Collections.sort(lifeCycles, OrderedComparator.INSTANCE);
+        Collections.sort(lifeCycles, OrderedComparator.INSTANCE);
         //TODO 检查器,检查各个时间的一些必须依赖的配置是否有
 //        BaseCheckComponent benchCheckComponent = BaseRuntime.getInstance().getContext().getBean(BaseCheckComponent.class);
 //
@@ -118,7 +121,7 @@ public class BaseRuntimeLifeCycle {
 //                    CommonLogger.getSysInit().info("执行结束" + AopUtils.getTargetClass(lifeCycle) + ".loading,cost=" + (System.currentTimeMillis() - start));
 //                }
             } catch (Exception e) {
-                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "执行loading异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
+                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "执行loading异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
             }
         }
         //TODO loading后检查
@@ -145,7 +148,7 @@ public class BaseRuntimeLifeCycle {
 //                    CommonLogger.getSysInit().info("执行结束" + AopUtils.getTargetClass(lifeCycle) + ".loaded,cost=" + (System.currentTimeMillis() - start));
 //                }
             } catch (Exception e) {
-                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "执行loaded异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
+                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "执行loaded异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
             }
         }
         //TODO loaded后检查
@@ -167,7 +170,7 @@ public class BaseRuntimeLifeCycle {
                 lifeCycle.preparing(BaseRuntime.getInstance());
                 System.out.println("执行结束" + AopUtils.getTargetClass(lifeCycle) + ".preparing,cost=" + (System.currentTimeMillis() - start));
             } catch (Exception e) {
-                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "执行preparing异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
+                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "执行preparing异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
             }
         }
         //TODO preparing后检查
@@ -189,7 +192,7 @@ public class BaseRuntimeLifeCycle {
                 lifeCycle.prepared(BaseRuntime.getInstance());
                 System.out.println("执行结束" + AopUtils.getTargetClass(lifeCycle) + ".prepared,cost=" + (System.currentTimeMillis() - start));
             } catch (Exception e) {
-                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "执行prepared异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
+                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "执行prepared异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
             }
         }
         //TODO prepared后检查
@@ -214,7 +217,7 @@ public class BaseRuntimeLifeCycle {
                 lifeCycle.initializing(BaseRuntime.getInstance());
                 System.out.println("执行结束" + AopUtils.getTargetClass(lifeCycle) + ".initializing,cost=" + (System.currentTimeMillis() - start));
             } catch (Exception e) {
-                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "执行initiazling异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
+                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "执行initiazling异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
             }
         }
         //TODO initializing后检查
@@ -236,7 +239,7 @@ public class BaseRuntimeLifeCycle {
                 lifeCycle.initialized(BaseRuntime.getInstance());
                 System.out.println("执行结束" + AopUtils.getTargetClass(lifeCycle) + ".initialized,cost=" + (System.currentTimeMillis() - start));
             } catch (Exception e) {
-                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "执行initialized异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
+                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "执行initialized异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
             }
         }
         //TODO initializing后检查
@@ -266,7 +269,7 @@ public class BaseRuntimeLifeCycle {
                 lifeCycle.starting(BaseRuntime.getInstance());
                 System.out.println("执行结束" + AopUtils.getTargetClass(lifeCycle) + ".starting,cost=" + (System.currentTimeMillis() - start));
             } catch (Exception e) {
-                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "执行starting异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
+                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "执行starting异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
             }
         }
         //TODO
@@ -288,7 +291,7 @@ public class BaseRuntimeLifeCycle {
                 lifeCycle.started(BaseRuntime.getInstance());
                 System.out.println("执行结束" + AopUtils.getTargetClass(lifeCycle) + ".started,cost=" + (System.currentTimeMillis() - start));
             } catch (Exception e) {
-                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "执行started异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
+                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "执行started异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
             }
         }
         //TODO
@@ -305,9 +308,7 @@ public class BaseRuntimeLifeCycle {
     /**
      * 关闭
      *
-     *
-     * @param cause
-     *            关闭原因
+     * @param cause 关闭原因
      */
     public synchronized void shutdown(String cause) {
         // 如果已经是关闭了，则不处理
@@ -398,7 +399,7 @@ public class BaseRuntimeLifeCycle {
                 lifeCycle.failed(BaseRuntime.getInstance());
                 System.out.println("执行结束" + AopUtils.getTargetClass(lifeCycle) + ".failed,cost=" + (System.currentTimeMillis() - start));
             } catch (Exception e) {
-                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR","系统错误"), "执行failed异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
+                throw new BaseRuntimeException(new ErrorCode("SYSTEM_ERROR", "系统错误"), "执行failed异常,lifeCycle=" + AopUtils.getTargetClass(lifeCycle), e);
             }
         }
     }
