@@ -31,6 +31,9 @@
             #{id}
         </foreach>
     </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id,name,  gmt_create, gmt_modified  from tag
+    </select>
     <delete id="deleteByIds">
         delete from tag where
         <foreach collection="ids" item="id" open=" id in(" close=")" separator=",">

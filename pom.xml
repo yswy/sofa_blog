@@ -199,6 +199,7 @@
 				<version>2.5.0</version>
 			</dependency>
 
+
             <!-- app-->
             <dependency>
                 <groupId>com.zuoer</groupId>

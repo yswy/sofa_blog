@@ -55,7 +55,7 @@
                                 <a href="/blog/${post.id!""}" class="text-dark" target="_blank"><h4
                                         class="card-title font-weight-bold">${post.title!""}</h4>
                                 </a>
-                                <p class="card-text">${post.description}</p>
+                                <p class="card-text">${post.introduction}</p>
                                 <p class="text-right text-secondary">${post.dateTime!""}</p>
                             </div>
                         </div>
