@@ -1,5 +1,6 @@
 package com.zuoer.sofa.blog.base.datasource.impl;
 
+import com.zuoer.sofa.blog.base.annotation.bean.instance.InstanceBean;
 import com.zuoer.sofa.blog.base.config.BaseConfiguration;
 import com.zuoer.sofa.blog.base.datasource.BaseDataSource;
 import com.zuoer.sofa.blog.base.datasource.BaseDataSourceComponent;
@@ -8,6 +9,11 @@ import com.zuoer.sofa.blog.base.datasource.DatabaseTypeEnum;
 import com.zuoer.sofa.blog.base.proxy.DataSourceProxy;
 import com.zuoer.sofa.blog.base.runtime.initializer.RuntimeInitializer;
 import org.apache.commons.pool2.impl.BaseObjectPoolConfig;
+import org.apache.ibatis.mapping.Environment;
+import org.apache.ibatis.session.Configuration;
+import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.transaction.SpringManagedTransactionFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
@@ -15,6 +21,7 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
  * @author zuoer
  * @version BaseDataSourceComponentImpl, v 0.1 2020/3/10 11:16 zuoer Exp $
  */
+@InstanceBean
 public class BaseDataSourceComponentImpl implements BaseDataSourceComponent, RuntimeInitializer {
 
     private BaseDataSource baseDataSource;
@@ -23,12 +30,11 @@ public class BaseDataSourceComponentImpl implements BaseDataSourceComponent, Run
 
     @Override
     public void initialize() {
-
+        refreshDataSourceConfig();
     }
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        System.out.println("开始数据源初始化");
         this.beanFactory = beanFactory;
         refreshDataSourceConfig();
         registerDataSourceBean();
@@ -36,7 +42,7 @@ public class BaseDataSourceComponentImpl implements BaseDataSourceComponent, Run
 
     private void refreshDataSourceConfig() {
         //此处先写死，目前作为个人应用不需要多数据源,同时先写死只支持oracle
-
+        System.out.println("开始数据源初始化");
         DataSourceConfig dataSourceConfig = BaseConfiguration.getInstance().getDataSourceConfig();
 
         BaseDataSource newDS = new BaseDataSource("SOFA_BLOG_DATASOURCE");
@@ -70,7 +76,7 @@ public class BaseDataSourceComponentImpl implements BaseDataSourceComponent, Run
         newDS.setTestWhileIdle(false);
         newDS.setTestOnBorrow(true);
         newDS.setTestOnReturn(false);
-        newDS.setValidationQuery("select 1 from dual;");
+        newDS.setValidationQuery("select 1 from dual");
         newDS.setValidationQueryTimeout(2);
         newDS.setTimeBetweenEvictionRunsMillis(5 * 1000);
         newDS.setNumTestsPerEvictionRun(5);
@@ -84,7 +90,41 @@ public class BaseDataSourceComponentImpl implements BaseDataSourceComponent, Run
      * 注册数据源为SpringBean
      */
     private void registerDataSourceBean() {
-        beanFactory.registerSingleton(baseDataSource.getDataSourceName(), new DataSourceProxy(this));
+//        beanFactory.registerSingleton(baseDataSource.getDataSourceName(), new DataSourceProxy(this));
+        beanFactory.registerSingleton("dataSource", new DataSourceProxy(this));
+
+        Configuration configuration=new Configuration();
+        //这个是在BaseExecutor中的338行 getConnection中使用的，数据库连接就是从这里拿的
+        SpringManagedTransactionFactory transactionFactory=new SpringManagedTransactionFactory();
+        configuration.setEnvironment(new Environment(BaseDataSourceComponentImpl.class.getSimpleName(),transactionFactory,this.baseDataSource));
+        DefaultSqlSessionFactory defaultSqlSessionFactory=new DefaultSqlSessionFactory(configuration);
+
+        beanFactory.registerSingleton("sqlSession", new SqlSessionTemplate(defaultSqlSessionFactory));
+
+//        BeanDefinition dataSource = beanFactory.getBeanDefinition("dataSource");
+//        MutablePropertyValues dataSourceProperty = dataSource.getPropertyValues();
+//        DataSourceConfig dataSourceConfig= BaseConfiguration.getInstance().getDataSourceConfig();
+//        dataSourceProperty.addPropertyValue("driverClassName", dataSourceConfig.getDriverClassName());
+//        dataSourceProperty.addPropertyValue("url", dataSourceConfig.getUrl());
+//        dataSourceProperty.addPropertyValue("username", dataSourceConfig.getUsername());
+//        dataSourceProperty.addPropertyValue("password", dataSourceConfig.getPassword());
+//
+//        BeanDefinition dataSqlSessionFactory = beanFactory.getBeanDefinition("sqlSessionFactory");
+//        MutablePropertyValues dataSqlSessionFactoryProperty = dataSqlSessionFactory.getPropertyValues();
+//        dataSqlSessionFactoryProperty.addPropertyValue("dataSource", dataSource);
+//        try {
+//            dataSqlSessionFactoryProperty.addPropertyValue("mapperLocations", new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/*.xml"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        BeanDefinition dataTransactionManager = beanFactory.getBeanDefinition("transactionManager");
+//        MutablePropertyValues dataTransactionManagerProperty = dataTransactionManager.getPropertyValues();
+//        dataTransactionManagerProperty.addPropertyValue("dataSource", dataSource);
+//
+//        BeanDefinition dataSqlSessionTemplate = beanFactory.getBeanDefinition("sqlSessionTemplate");
+//        MutablePropertyValues dataSqlSessionTemplateProperty = dataSqlSessionTemplate.getPropertyValues();
+//        dataSqlSessionTemplateProperty.addPropertyValue("sqlSessionFactory", dataSqlSessionFactory);
     }
 
     @Override

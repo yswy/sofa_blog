@@ -35,11 +35,6 @@ public class BaseDataSource extends BasicDataSource {
 	private String username;
 
 	/**
-	 * 密码
-	 */
-	private String password;
-
-	/**
 	 * 最大使用数，即使用峰值
 	 */
 	private int maxUsingCount;
@@ -202,13 +197,4 @@ public class BaseDataSource extends BasicDataSource {
 		this.databaseType = databaseType;
 	}
 
-	@Override
-	public String getPassword() {
-		return password;
-	}
-
-	@Override
-	public void setPassword(String password) {
-		this.password = password;
-	}
 }

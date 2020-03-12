@@ -6,6 +6,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -26,6 +27,7 @@ import java.util.jar.JarFile;
 
 import org.apache.commons.lang.SystemUtils;
 import org.apache.commons.lang.reflect.FieldUtils;
+import org.apache.commons.lang3.reflect.MethodUtils;
 import org.springframework.core.DefaultParameterNameDiscoverer;
 import org.springframework.core.ParameterNameDiscoverer;
 import org.springframework.util.Assert;
@@ -75,6 +77,33 @@ public class ClassUtils {
 		} catch (NoSuchMethodException ex) {
 			return null;
 		}
+	}
+
+	public static Object getInstance(Class<?> visitClass, boolean instanceFirst) {
+		if (instanceFirst) {
+			Object instance = FieldUtils.getField(visitClass, "instance");
+			if (instance != null && instance.getClass().equals(visitClass)) {
+				return instance;
+			}
+			instance = FieldUtils.getField(visitClass, "INSTANCE");
+			if (instance != null && instance.getClass().equals(visitClass)) {
+				return instance;
+			}
+			Method getInstanceMethod = MethodUtils.getAccessibleMethod(visitClass, "getInstance");
+			if (getInstanceMethod != null) {
+				try {
+					instance = getInstanceMethod.invoke(null);
+				} catch (IllegalAccessException e) {
+					System.out.println("通过方法获取实例失败，暂时忽略");
+				} catch (InvocationTargetException e) {
+					System.out.println("通过方法获取实例失败，暂时忽略");
+				}
+				if (instance != null && instance.getClass().equals(visitClass)) {
+					return instance;
+				}
+			}
+		}
+		return ClassUtils.newInstance(visitClass);
 	}
 
 	/**

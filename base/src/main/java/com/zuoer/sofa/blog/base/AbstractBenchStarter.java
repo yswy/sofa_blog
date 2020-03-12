@@ -1,5 +1,6 @@
 package com.zuoer.sofa.blog.base;
 
+import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
@@ -10,7 +11,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication(
 		exclude = { //DataSourceAutoConfiguration.class, MongoAutoConfiguration.class, JdbcTemplateAutoConfiguration.class,
 		//HttpEncodingAutoConfiguration.class, ServletWebServerFactoryAutoConfiguration.class,
-		SecurityFilterAutoConfiguration.class, SecurityAutoConfiguration.class,
+		SecurityFilterAutoConfiguration.class, SecurityAutoConfiguration.class
+		, MybatisAutoConfiguration.class
 		//DispatcherServletAutoConfiguration.class,
 //		RedisReactiveAutoConfiguration.class
 		// 不支持devtools

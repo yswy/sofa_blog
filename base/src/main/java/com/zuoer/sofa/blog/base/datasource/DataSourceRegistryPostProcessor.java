@@ -1,10 +1,10 @@
 //package com.zuoer.sofa.blog.base.datasource;
 //
-//import com.zuoer.sofa.blog.base.config.BaseConfiguration;
+//import com.zuoer.sofa.blog.base.autoconfig.BaseConfiguration;
 //import org.springframework.beans.BeansException;
 //import org.springframework.beans.MutablePropertyValues;
-//import org.springframework.beans.factory.config.BeanDefinition;
-//import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+//import org.springframework.beans.factory.autoconfig.BeanDefinition;
+//import org.springframework.beans.factory.autoconfig.ConfigurableListableBeanFactory;
 //import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 //import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 //import org.springframework.context.annotation.Configuration;

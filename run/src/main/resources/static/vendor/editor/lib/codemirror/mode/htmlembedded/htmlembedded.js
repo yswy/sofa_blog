@@ -13,7 +13,7 @@
 
 CodeMirror.defineMode("htmlembedded", function(config, parserConfig) {
 
-  //config settings
+  //autoconfig settings
   var scriptStartRegex = parserConfig.scriptStartRegex || /^<%/i,
       scriptEndRegex = parserConfig.scriptEndRegex || /^%>/i;
 

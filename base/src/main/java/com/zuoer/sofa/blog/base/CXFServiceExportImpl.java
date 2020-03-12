@@ -10,7 +10,7 @@
 //import com.bench.platform.base.webservice.hello.HelloFacade;
 //import com.bench.platform.common.webservice.count.server.WebServiceServerMethodCallCountComponent;
 //import com.bench.platform.common.webservice.cxf.CXFServiceExport;
-//import com.bench.platform.common.webservice.cxf.config.CXFServiceConfig;
+//import com.bench.platform.common.webservice.cxf.autoconfig.CXFServiceConfig;
 //import com.bench.platform.common.webservice.cxf.interceptor.WebServiceCallInfoGetInterceptor;
 //import com.bench.platform.webservice.utils.WebServiceUtils;
 //import com.bench.runtime.core.BenchRuntime;
