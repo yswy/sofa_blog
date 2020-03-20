@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+	<operation name="selectById">
+		<sql>
+			select id, title,  gmt_create, gmt_modified, introduction, md_material, html_material  from resume where id = ?
+    
+		</sql>
+	</operation>
+
+	<operation name="updateById" paramtype="object">
+		<sql>
+			update resume set title=?, introduction=?, md_material=?, html_material=?,gmt_modified=sysdate where id =?
+		</sql>
+	</operation>
+</table>

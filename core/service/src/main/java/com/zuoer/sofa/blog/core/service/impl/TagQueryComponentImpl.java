@@ -7,7 +7,7 @@ package com.zuoer.sofa.blog.core.service.impl;
 import com.zuoer.sofa.blog.core.model.Tag;
 import com.zuoer.sofa.blog.core.service.TagQueryComponent;
 import com.zuoer.sofa.blog.core.service.converter.TagConverter;
-import com.zuoer.sofa.blog.dal.mapper.TagMapper;
+import com.zuoer.sofa.blog.dal.dao.TagMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

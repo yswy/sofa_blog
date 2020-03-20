@@ -1,7 +1,9 @@
 package org.mybatis.generator.codegen.mybatis3.javamapper.elements;
 
 import com.zuoer.sofa.blog.base.utils.ArrayUtils;
+import com.zuoer.sofa.blog.base.utils.ListUtils;
 import com.zuoer.sofa.blog.base.utils.StringUtils;
+import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.api.dom.java.Interface;
 import org.mybatis.generator.api.dom.java.JavaVisibility;
@@ -107,8 +109,13 @@ public class UserDefindSqlMethodGenerator extends
                         returnType = realType;
                     }
                 } else if (methodName.startsWith("insert")) {
-                    returnType = new FullyQualifiedJavaType(introspectedTable.getPrimaryKeyType());
-                } else if (methodName.startsWith("update")) {
+                    List<IntrospectedColumn> primaryKeyList=introspectedTable.getPrimaryKeyColumns();
+                    if(ListUtils.size(primaryKeyList) !=1){
+                        throw new RuntimeException("根据sql生成自定义mapper失败,主键有且只能有一个，tableName=" + introspectedTable.getTableConfiguration().getTableName() + ",sqlName=" + methodName);
+                    }
+
+                    returnType =primaryKeyList.get(0).getFullyQualifiedJavaType();
+                } else if (methodName.startsWith("update") || methodName.startsWith("delete") ) {
                     returnType = FullyQualifiedJavaType.getIntInstance();
                 } else {
                     throw new RuntimeException("根据sql生成自定义mapper失败,请确认name前缀，目前支持select,search,update,insert，tableName=" + introspectedTable.getTableConfiguration().getTableName() + ",sqlName=" + methodName);

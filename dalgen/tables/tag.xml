@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <table>
-	<operation name="selectByEmail">
+	<operation name="selectById">
 		<sql>
 			select id,name,  gmt_create, gmt_modified  from tag where id = ?
+		</sql>
+	</operation>
+
+	<operation name="insert">
+		<sql>
+			insert into tag(  id,name,  gmt_create, gmt_modified)
+		 values ( ?, ?,  sysdate, sysdate)
+		</sql>
+	</operation>
+
+	<operation name="selectByName">
+		<sql>
+			select id,name,  gmt_create, gmt_modified  from tag where name = ?
+		</sql>
+	</operation>
+
+	<operation name="selectAll" multiplicity="many" >
+		<sql>
+			select id,name,  gmt_create, gmt_modified  from tag
 		</sql>
 	</operation>
 </table>

@@ -7,8 +7,8 @@ package com.zuoer.sofa.blog.core.service.impl;
 import com.zuoer.sofa.blog.base.utils.ConverterUtils;
 import com.zuoer.sofa.blog.core.model.enums.ErrorCodeEnum;
 import com.zuoer.sofa.blog.core.service.UserManageComponent;
-import com.zuoer.sofa.blog.dal.entity.UserDO;
-import com.zuoer.sofa.blog.dal.mapper.UserMapper;
+import com.zuoer.sofa.blog.dal.dao.UserBaseMapper;
+import com.zuoer.sofa.blog.dal.dateobject.UserBaseDO;
 import com.zuoer.sofa.blog.facade.api.request.UserRegisterRequest;
 import com.zuoer.sofa.blog.facade.api.result.UserOperateResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 public class UserManageComponentImpl implements UserManageComponent {
 
 	@Autowired
-	private UserMapper userMapper;
+	private UserBaseMapper userBaseMapper;
 	
 	/* (non-Javadoc)
 	 * @see com.zuoer.sofa.blog.core.service.UserManageComponent#register(com.zuoer.sofa.blog.facade.api.request.UserRegisterRequest)
@@ -34,15 +34,15 @@ public class UserManageComponentImpl implements UserManageComponent {
 		// TODO Auto-generated method stub
 		UserOperateResult result=new UserOperateResult();
 		result.setSuccess(true);
-		UserDO exsitUser=userMapper.selectByUserName(request.getUsername());
+		UserBaseDO exsitUser= userBaseMapper.selectByUserName(request.getUsername());
 		if(exsitUser!=null) {
 			result.setSuccess(false);
     		result.setError(ErrorCodeEnum.USER_NAME_EXSITED.errorCode());
     		return result;
 		}
-		UserDO userDO=new UserDO();
+		UserBaseDO userDO=new UserBaseDO();
 		ConverterUtils.convert(request, userDO);
-		userMapper.insert(userDO);
+		userBaseMapper.insert(userDO);
 		return result;
 	}
 

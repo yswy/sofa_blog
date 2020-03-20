@@ -5,8 +5,8 @@
 package com.zuoer.sofa.blog.core.service.impl;
 
 import com.zuoer.sofa.blog.core.service.ResumeManageComponent;
-import com.zuoer.sofa.blog.dal.entity.ResumeDO;
-import com.zuoer.sofa.blog.dal.mapper.ResumeMapper;
+import com.zuoer.sofa.blog.dal.dao.ResumeMapper;
+import com.zuoer.sofa.blog.dal.dateobject.ResumeDO;
 import com.zuoer.sofa.blog.facade.api.request.ResumeModifyRequest;
 import com.zuoer.sofa.blog.facade.api.result.ResumeOperateResult;
 import org.springframework.beans.factory.annotation.Autowired;

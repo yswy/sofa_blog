@@ -18,7 +18,7 @@ public class ResumeModifyRequest {
 	/**
 	 * 主键id
 	 */
-	private int id;
+	private long id;
 
 	/**
 	 * 标题
@@ -45,11 +45,11 @@ public class ResumeModifyRequest {
 	 */
 	private List<String> tagNameList;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

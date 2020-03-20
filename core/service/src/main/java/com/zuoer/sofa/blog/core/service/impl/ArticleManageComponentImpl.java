@@ -5,12 +5,12 @@
 package com.zuoer.sofa.blog.core.service.impl;
 
 import com.zuoer.sofa.blog.core.service.ArticleManageComponent;
-import com.zuoer.sofa.blog.dal.entity.ArticleDO;
-import com.zuoer.sofa.blog.dal.entity.TagArticleDO;
-import com.zuoer.sofa.blog.dal.entity.TagDO;
-import com.zuoer.sofa.blog.dal.mapper.ArticleMapper;
-import com.zuoer.sofa.blog.dal.mapper.TagArticleMapper;
-import com.zuoer.sofa.blog.dal.mapper.TagMapper;
+import com.zuoer.sofa.blog.dal.dao.ArticleMapper;
+import com.zuoer.sofa.blog.dal.dao.TagArticleMapper;
+import com.zuoer.sofa.blog.dal.dao.TagMapper;
+import com.zuoer.sofa.blog.dal.dateobject.ArticleDO;
+import com.zuoer.sofa.blog.dal.dateobject.TagArticleDO;
+import com.zuoer.sofa.blog.dal.dateobject.TagDO;
 import com.zuoer.sofa.blog.facade.api.request.ArticleCreateRequest;
 import com.zuoer.sofa.blog.facade.api.request.ArticleModifyRequest;
 import com.zuoer.sofa.blog.facade.api.result.ArticleOperateResult;
@@ -53,12 +53,12 @@ public class ArticleManageComponentImpl implements ArticleManageComponent {
 		article.setHtmlMaterial(request.getHtmlMaterial());
 		article.setIntroduction(request.getIntroduction());
 		articleMapper.insert(article);
-		Integer articleId = article.getId();
+		Long articleId = article.getId();
 		// 处理 tags
 		List<String> tags = request.getTagNameList();
 		for (String item : tags) {
 
-			TagDO tag = tagMapper.selectTagByName(item);
+			TagDO tag = tagMapper.selectByName(item);
 			if (null == tag) {
 				tag = new TagDO();
 				tag.setName(item);

@@ -1,6 +1,6 @@
 package com.zuoer.sofa.blog.dal.dao;
 
-import com.zuoer.sofa.blog.dal.dateobject.Tag;
+import com.zuoer.sofa.blog.dal.dateobject.TagDO;
 
 public interface TagMapper {
     /**
@@ -9,5 +9,5 @@ public interface TagMapper {
      *
      * @mbg.generated
      */
-    Tag selectByEmail(Long id);
+    TagDO selectByEmail(Long id);
 }

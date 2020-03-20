@@ -1,7 +1,9 @@
 package org.mybatis.generator.codegen.mybatis3.xmlmapper.elements;
 
+import com.zuoer.sofa.blog.base.utils.ArrayUtils;
 import com.zuoer.sofa.blog.base.utils.ListUtils;
 import com.zuoer.sofa.blog.base.utils.StringUtils;
+import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.api.dom.xml.Attribute;
 import org.mybatis.generator.api.dom.xml.TextElement;
 import org.mybatis.generator.api.dom.xml.XmlElement;
@@ -31,7 +33,6 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
 
     @Override
     public void addElements(XmlElement parentElement) {
-        System.out.println("开始处理:" + introspectedTable.getTableConfiguration().getTableName());
         //找到表名对应的xml文件，规则为当前运行目录下的 tables/table_name.xml
         try {
             File sqlFile = new File(context.getProperty("targetRunPath") + "/tables", introspectedTable.getTableConfiguration().getTableName() + ".xml");
@@ -88,7 +89,6 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
                 Node extraParamsNode = null;
                 Node sqlMapNode = null;
 
-
                 for (int j = 0; j < node.getChildNodes().getLength(); j++) {
                     Node tmp = node.getChildNodes().item(j);
                     if (StringUtils.equals("sql", tmp.getNodeName())) {
@@ -99,6 +99,7 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
                         sqlMapNode = tmp;
                     }
                 }
+
                 String sqlName = node.getAttributes().getNamedItem("name").getNodeValue();
                 XmlElement answer;
                 //根据方法名字不同，节点名也不同
@@ -108,15 +109,39 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
                     answer = new XmlElement("insert");
                 } else if (sqlName.startsWith("update")) {
                     answer = new XmlElement("update");
+                } else if (sqlName.startsWith("delete")) {
+                    answer = new XmlElement("delete");
                 } else {
                     throw new RuntimeException("根据sql生成自定义mapper失败,请确认name前缀，目前支持select,search,update,insert，tableName=" + introspectedTable.getTableConfiguration().getTableName() + ",sqlName=" + sqlName);
                 }
                 String resultTypeInOperation = node.getAttributes().getNamedItem("resultType") == null ? null : node.getAttributes().getNamedItem("resultType").getNodeValue();
                 String paramtype = node.getAttributes().getNamedItem("paramtype") == null ? null : node.getAttributes().getNamedItem("paramtype").getNodeValue();
                 answer.addAttribute(new Attribute("id", sqlName));
-                if(StringUtils.isNotEmpty(resultTypeInOperation)){
-                    answer.addAttribute(new Attribute("resultMap", resultTypeInOperation));
+
+                String sql="";
+                if (sqlMapNode != null) {
+                    sql=sqlMapNode.getTextContent();
+                } else if (sqlNode != null) {
+                    sql = sqlNode.getTextContent();
+                }else{
+                    throw new RuntimeException("根据sql生成自定义mapper失败,未找到sql语句，tableName=" + introspectedTable.getTableConfiguration().getTableName() + ",sqlName=" + sqlName);
                 }
+
+                //如果是select 则必须确认结果集
+                if (sqlName.startsWith("select")) {
+                    if (StringUtils.isNotEmpty(resultTypeInOperation)) {
+                        answer.addAttribute(new Attribute("resultMap", new FullyQualifiedJavaType(resultTypeInOperation).getFullyQualifiedName()));
+                    } else {
+                        String[] returnColumns = StringUtils.trim(StringUtils.split(StringUtils.substringBetween(sql, "select", "from"), ","));
+                        if (ArrayUtils.getLength(returnColumns) == 1) {
+                            answer.addAttribute(new Attribute("resultMap", new FullyQualifiedJavaType(introspectedTable.getBaseRecordType()).getFullyQualifiedName()));
+                        } else {
+                            answer.addAttribute(new Attribute("resultMap", "BaseResultMap"));
+                        }
+                    }
+                }
+
+
 
                 StringBuilder realSql = new StringBuilder();
 
@@ -125,10 +150,10 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
                     realSql.append(sqlMapNode.getTextContent());
                 } else if (sqlNode != null) {
                     //如果是sql，要把问号替换成#{columnName}
-                    String sql = sqlNode.getTextContent();
+
                     //此处要把 update select insert 分开处理
                     String parameterPart;
-                    String sqlAfterWhere;
+                    String sqlAfterParameter;
                     if (sqlName.startsWith("select")) {
                         if(StringUtils.isNotEmpty(paramtype)){
                             answer.addAttribute(new Attribute("parameterType", paramtype));
@@ -138,11 +163,23 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
                         if (StringUtils.contains(sql, "group by")) {
                             //如果有group by 截取groupBy和where之间的就好了
                             parameterPart = StringUtils.substringBetween(sql, "where", "group by");
-                            sqlAfterWhere = "group by " + StringUtils.substringAfter(sql, "group by");
-                        } else {
+                            sqlAfterParameter = StringUtils.substringAfter(sql, "group by");
+                            //由于group by 被截掉，如果有，则需要拼上去
+                            if(StringUtils.isNotEmpty(sqlAfterParameter)){
+                                sqlAfterParameter=" group by "+sqlAfterParameter;
+                            }
+                        } else if(StringUtils.contains(sql, "order by")){
                             //没有就截取order by之间的
                             parameterPart = StringUtils.substringBetween(sql, "where", "order by");
-                            sqlAfterWhere = "order by " + StringUtils.substringAfter(sql, "order by");
+                            sqlAfterParameter = StringUtils.substringAfter(sql, "order by");
+                            //由于order by 被截掉，如果有，则需要拼上去
+                            if(StringUtils.isNotEmpty(sqlAfterParameter)){
+                                sqlAfterParameter=" order by "+sqlAfterParameter;
+                            }
+                        }else{
+                            //都没有，直接去where后面的
+                            parameterPart = StringUtils.substringAfter(sql, " where ");
+                            sqlAfterParameter = null;
                         }
 
 
@@ -152,7 +189,7 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
 
                     } else if (sqlName.startsWith("insert")) {
                         parameterPart = null;
-                        sqlAfterWhere = null;
+                        sqlAfterParameter = null;
                         String insertSatrt = StringUtils.substringBefore(sql, "(");
                         String colmunNamePart = StringUtils.substringBetween(StringUtils.substringBeforeLast(sql, "values"), "(", ")");
                         String valuePart = StringUtils.substringBetween(StringUtils.substringAfterLast(sql, "values"), "(", ")");
@@ -176,7 +213,7 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
                         String beforeSetPart = StringUtils.substringBefore(sql, "set");
                         String updatePart = StringUtils.substringBetween(sql, "set", "where");
                         parameterPart = StringUtils.substringAfter(sql, "where");
-                        sqlAfterWhere = null;
+                        sqlAfterParameter = null;
                         //然后进行拼接
                         realSql.append(beforeSetPart);
                         realSql.append(" set ");
@@ -193,7 +230,12 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
                         }
                         realSql.delete(realSql.lastIndexOf(","), realSql.length());
 
-                    } else {
+                    } else if (sqlName.startsWith("delete")) {
+                        sqlAfterParameter=null;
+                        parameterPart = StringUtils.substringAfter(sql, "where");
+                        String beforeWherePart = StringUtils.substringBefore(sql, "where");
+                        realSql.append(beforeWherePart);
+                    } else{
                         throw new RuntimeException("根据sql生成自定义mapper失败,请确认name前缀，简单sql目前支持select,update,insert，tableName=" + introspectedTable.getTableConfiguration().getTableName() + ",sqlName=" + sqlName);
                     }
                     if (StringUtils.isNotEmpty(parameterPart)) {
@@ -208,8 +250,8 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
 
                         realSql.delete(realSql.lastIndexOf("and"), realSql.length());
                     }
-                    if (StringUtils.isNotEmpty(sqlAfterWhere)) {
-                        realSql.append(sqlAfterWhere);
+                    if (StringUtils.isNotEmpty(sqlAfterParameter)) {
+                        realSql.append(sqlAfterParameter);
                     }
 
 

@@ -6,6 +6,12 @@
 		</sql>
 	</operation>
 
+	<operation name="selectAll" multiplicity="many" >
+		<sql>
+			select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info  from admin_user 
+		</sql>
+	</operation>
+
 	<operation name="insert">
 		<sql>
 			insert into admin_user(  id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info)
@@ -15,6 +21,11 @@
 	<operation name="selectById">
 		<sql>
 			select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info  from admin_user where id =?
+		</sql>
+	</operation>
+	<operation name="selectByUserName">
+		<sql>
+			select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info  from admin_user where username =?
 		</sql>
 	</operation>
 	<operation name="selectByIds">
@@ -28,6 +39,24 @@
 		<![CDATA[
 			 select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create,
 			gmt_modified, hobby, motto, md_info from admin_user
+			where
+			<foreach collection="ids" item="id" open=" id in(" close=")" separator=",">
+				#{id}
+			</foreach>
+			 ]]>
+		</sqlmap>
+	</operation>
+
+	<operation name="deleteByIds">
+		<extraparams>
+			<param name="ids" javatype="java.util.List"></param>
+		</extraparams>
+		<sql>
+			delete  from admin_user where 1=0
+		</sql>
+		<sqlmap>
+		<![CDATA[
+			 delete from admin_user
 			where
 			<foreach collection="ids" item="id" open=" id in(" close=")" separator=",">
 				#{id}

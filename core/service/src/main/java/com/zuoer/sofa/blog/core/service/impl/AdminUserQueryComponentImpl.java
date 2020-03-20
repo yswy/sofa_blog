@@ -7,7 +7,7 @@ package com.zuoer.sofa.blog.core.service.impl;
 import com.zuoer.sofa.blog.core.model.AdminUser;
 import com.zuoer.sofa.blog.core.service.AdminUserQueryComponent;
 import com.zuoer.sofa.blog.core.service.converter.AdminUserConverter;
-import com.zuoer.sofa.blog.dal.mapper.AdminUserMapper;
+import com.zuoer.sofa.blog.dal.dao.AdminUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

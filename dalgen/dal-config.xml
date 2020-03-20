@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tables>
 	<include table="admin_user" />
+	<include table="article" />
+	<include table="tag_article" />
+	<include table="tag" />
+	<include table="user_base" />
+	<include table="resume" />
 </tables>

@@ -4,11 +4,10 @@
  */
 package com.zuoer.sofa.blog.core.service.converter;
 
-import org.springframework.stereotype.Component;
-
 import com.zuoer.sofa.blog.base.converter.AbstractConverter;
 import com.zuoer.sofa.blog.core.model.AdminUser;
-import com.zuoer.sofa.blog.dal.entity.AdminUserDO;
+import com.zuoer.sofa.blog.dal.dateobject.AdminUserDO;
+import org.springframework.stereotype.Component;
 
 /**
  * 

@@ -1,10 +1,10 @@
 package com.zuoer.sofa.blog.core.model;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 /**
  * 管理员用户类
@@ -18,7 +18,7 @@ public class AdminUser {
   /**
    * PrimaryKey
    */
-  private Integer id;
+  private Long id;
 
   /**
    * 用户名
@@ -54,21 +54,11 @@ public class AdminUser {
 
   private String mdInfo;
 
-  /**
-   * 获取PrimaryKey
-   *
-   * @return id - PrimaryKey
-   */
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  /**
-   * 设置PrimaryKey
-   *
-   * @param id PrimaryKey
-   */
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

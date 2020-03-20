@@ -37,12 +37,12 @@ public class BaseConfigurationLoader implements RuntimeInitializer {
 
         System.out.println("初始化datasource");
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
-//        dataSourceConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-//        dataSourceConfig.setUrl("jdbc:oracle:thin:@10.0.0.91:1521/dev");
-//        dataSourceConfig.setPassword("zuoer_test");
-        dataSourceConfig.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSourceConfig.setUrl("jdbc:mysql://10.0.0.91:3306/zuoer_test?serverTimezone=UTC");
-        dataSourceConfig.setPassword("zuoer_test123");
+        dataSourceConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+        dataSourceConfig.setUrl("jdbc:oracle:thin:@10.0.0.91:1521/dev");
+        dataSourceConfig.setPassword("zuoer_test");
+//        dataSourceConfig.setDriverClassName("com.mysql.jdbc.Driver");
+//        dataSourceConfig.setUrl("jdbc:mysql://10.0.0.91:3306/zuoer_test?serverTimezone=UTC");
+//        dataSourceConfig.setPassword("zuoer_test123");
         dataSourceConfig.setUsername("zuoer_test");
         baseConfiguration.setDataSourceConfig(dataSourceConfig);
     }

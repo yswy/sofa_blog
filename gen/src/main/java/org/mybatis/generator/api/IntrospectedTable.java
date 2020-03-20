@@ -886,7 +886,7 @@ public abstract class IntrospectedTable {
         sb.append(pakkage);
         sb.append('.');
         sb.append(fullyQualifiedTable.getDomainObjectName());
-        setBaseRecordType(sb.toString());
+        setBaseRecordType(sb.toString()+"DO");
 
         sb.setLength(0);
         sb.append(pakkage);

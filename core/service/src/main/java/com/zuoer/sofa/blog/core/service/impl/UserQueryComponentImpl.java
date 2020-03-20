@@ -7,7 +7,7 @@ package com.zuoer.sofa.blog.core.service.impl;
 import com.zuoer.sofa.blog.core.model.User;
 import com.zuoer.sofa.blog.core.service.UserQueryComponent;
 import com.zuoer.sofa.blog.core.service.converter.UserConverter;
-import com.zuoer.sofa.blog.dal.mapper.UserMapper;
+import com.zuoer.sofa.blog.dal.dao.UserBaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +23,7 @@ import java.util.List;
 public class UserQueryComponentImpl implements UserQueryComponent {
 	
 	@Autowired
-	private UserMapper userMapper;
+	private UserBaseMapper userBaseMapper;
 	
 	@Autowired
 	private UserConverter userConverter;
@@ -34,7 +34,7 @@ public class UserQueryComponentImpl implements UserQueryComponent {
 	@Override
 	public List<User> getAll() {
 		// TODO Auto-generated method stub
-		return userConverter.convertMany(userMapper.selectAll());
+		return userConverter.convertMany(userBaseMapper.selectAll());
 	}
 
 	/* (non-Javadoc)
@@ -43,7 +43,7 @@ public class UserQueryComponentImpl implements UserQueryComponent {
 	@Override
 	public User getByUserName(String userName) {
 		// TODO Auto-generated method stub
-		return userConverter.convertOne(userMapper.selectByUserName(userName));
+		return userConverter.convertOne(userBaseMapper.selectByUserName(userName));
 	}
 
 }

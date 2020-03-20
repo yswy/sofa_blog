@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
    <!--<classPathEntry  location="mysql-connector-java-5.1.31.jar"/>  -->
-	<classPathEntry  location="ojdbc14-11.2.0.3.0.jar"/>  
+	<classPathEntry  location="D:\bench_zuoer\sofa_blog\dalgen\ojdbc14-11.2.0.3.0.jar"/>  
 
     <context id="DB2Tables" targetRuntime="MyBatis3">
 		<property  name="targetRunPath" value="./"/>  
@@ -18,27 +18,25 @@
 		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
                         connectionURL="jdbc:oracle:thin:@10.0.0.91:1521/dev" userId="zuoer_test" password="zuoer_test"/>
 
-		<!--do对象位置-->
         <javaModelGenerator targetPackage="com.zuoer.sofa.blog.dal.dateobject"
-                            targetProject="../dal/src/main/java/">
+                            targetProject="./src/main/java/">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-		<!--xml位置-->
         <sqlMapGenerator targetPackage="mybatis"
-                         targetProject="../dal/src/main/resources">
+                         targetProject="./src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-		<!--mapper位置-->
+
         <javaClientGenerator type="XMLMAPPER"
                              targetPackage="com.zuoer.sofa.blog.dal.dao"
-                             targetProject="../dal/src/main/java/">
+                             targetProject="./src/main/java/">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
 
-        <table tableName="test"/>
+        
     </context>
 </generatorConfiguration>

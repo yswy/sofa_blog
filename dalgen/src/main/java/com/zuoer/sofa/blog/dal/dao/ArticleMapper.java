@@ -1,6 +1,6 @@
 package com.zuoer.sofa.blog.dal.dao;
 
-import com.zuoer.sofa.blog.dal.dateobject.Article;
+import com.zuoer.sofa.blog.dal.dateobject.ArticleDO;
 
 public interface ArticleMapper {
     /**
@@ -9,5 +9,5 @@ public interface ArticleMapper {
      *
      * @mbg.generated
      */
-    Article selectByEmail(Long id);
+    ArticleDO selectByEmail(Long id);
 }

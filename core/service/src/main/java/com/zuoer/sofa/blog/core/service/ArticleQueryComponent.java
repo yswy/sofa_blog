@@ -22,7 +22,7 @@ public interface ArticleQueryComponent {
 	 * @param id
 	 * @return
 	 */
-	public Article getById(int id);
+	public Article getById(long id);
 	
 	/**
 	 * 查询全部

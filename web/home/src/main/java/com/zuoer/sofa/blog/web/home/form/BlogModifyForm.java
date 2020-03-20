@@ -12,7 +12,7 @@ public class BlogModifyForm {
 	/**
 	 * 所修改博客的 id
 	 */
-	private Integer id;
+	private Long id;
 
 	/**
 	 * 文章标题
@@ -36,11 +36,11 @@ public class BlogModifyForm {
 	 */
 	private List<String> rawTags;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

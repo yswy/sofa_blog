@@ -4,11 +4,11 @@
  */
 package com.zuoer.sofa.blog.core.service.converter;
 
+import com.zuoer.sofa.blog.dal.dateobject.UserBaseDO;
 import org.springframework.stereotype.Component;
 
 import com.zuoer.sofa.blog.base.converter.AbstractConverter;
 import com.zuoer.sofa.blog.core.model.User;
-import com.zuoer.sofa.blog.dal.entity.UserDO;
 
 /**
  * 
@@ -18,6 +18,6 @@ import com.zuoer.sofa.blog.dal.entity.UserDO;
  * @version $Id: UserConverter.java, v 0.1 2019年12月5日 下午12:33:18 zuoer Exp $
  */
 @Component
-public class UserConverter extends AbstractConverter<UserDO, User> {
+public class UserConverter extends AbstractConverter<UserBaseDO, User> {
 
 }

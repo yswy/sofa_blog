@@ -4,11 +4,10 @@
  */
 package com.zuoer.sofa.blog.core.service.converter;
 
-import org.springframework.stereotype.Component;
-
 import com.zuoer.sofa.blog.base.converter.AbstractConverter;
 import com.zuoer.sofa.blog.core.model.Article;
-import com.zuoer.sofa.blog.dal.entity.ArticleDO;
+import com.zuoer.sofa.blog.dal.dateobject.ArticleDO;
+import org.springframework.stereotype.Component;
 
 /**
  * 

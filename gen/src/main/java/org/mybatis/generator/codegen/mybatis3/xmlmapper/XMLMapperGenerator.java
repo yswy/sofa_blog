@@ -41,6 +41,7 @@ import org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.UpdateByExample
 import org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.UpdateByPrimaryKeySelectiveElementGenerator;
 import org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.UpdateByPrimaryKeyWithBLOBsElementGenerator;
 import org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.UpdateByPrimaryKeyWithoutBLOBsElementGenerator;
+import org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.UserDefindSqlBaseResultMapGenerator;
 import org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.UserDefindSqlElementGenerator;
 
 import static org.mybatis.generator.internal.util.messages.Messages.getString;
@@ -87,14 +88,21 @@ public class XMLMapperGenerator extends AbstractXmlGenerator {
 //        addUpdateByPrimaryKeySelectiveElement(answer);
 //        addUpdateByPrimaryKeyWithBLOBsElement(answer);
 //        addUpdateByPrimaryKeyWithoutBLOBsElement(answer);
+        addUserDefindSqlBaseResultMapElement(answer);
         addUserDefindSqlElement(answer);
-
         return answer;
     }
 
     protected void addUserDefindSqlElement(XmlElement parentElement) {
         if (introspectedTable.getRules().generateUserDefindSql()) {
             AbstractXmlElementGenerator methodGenerator = new UserDefindSqlElementGenerator();
+            initializeAndExecuteGenerator(methodGenerator, parentElement);
+        }
+    }
+
+    protected void addUserDefindSqlBaseResultMapElement(XmlElement parentElement) {
+        if (introspectedTable.getRules().generateUserDefindSql()) {
+            AbstractXmlElementGenerator methodGenerator = new UserDefindSqlBaseResultMapGenerator();
             initializeAndExecuteGenerator(methodGenerator, parentElement);
         }
     }

@@ -7,7 +7,7 @@ package com.zuoer.sofa.blog.core.service.impl;
 import com.zuoer.sofa.blog.core.model.Article;
 import com.zuoer.sofa.blog.core.service.ArticleQueryComponent;
 import com.zuoer.sofa.blog.core.service.converter.ArticleConverter;
-import com.zuoer.sofa.blog.dal.mapper.ArticleMapper;
+import com.zuoer.sofa.blog.dal.dao.ArticleMapper;
 import com.zuoer.sofa.blog.facade.api.request.ArticleSearchRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -33,7 +33,7 @@ public class ArticleQueryComponentImpl implements ArticleQueryComponent {
 	 * @see com.zuoer.sofa.blog.core.service.ArticleQueryComponent#getById(int)
 	 */
 	@Override
-	public Article getById(int id) {
+	public Article getById(long id) {
 		// TODO Auto-generated method stub
 		return articleConverter.convertOne(articleMapper.selectById(id));
 	}

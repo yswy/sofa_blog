@@ -4,11 +4,8 @@
  */
 package com.zuoer.sofa.blog.web.home.json;
 
-import com.zuoer.sofa.blog.dal.entity.WebAccessLogDealDO;
-import com.zuoer.sofa.blog.dal.mapper.WebAccessLogDealMapper;
 import com.zuoer.sofa.blog.facade.api.HelloFacade;
 import com.zuoer.sofa.blog.facade.api.request.HelloRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,8 +20,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloWorldJson {
 	
-	@Autowired
-	private WebAccessLogDealMapper webAccessLogDealMapper;
 
 //	@SofaReferenceBinding(bindingType="rest")
 //	@SofaReference
@@ -35,9 +30,7 @@ public class HelloWorldJson {
 	@ResponseBody
 	public String hello() {
 
-		WebAccessLogDealDO webAccessLogDealDO =webAccessLogDealMapper.selectById("4d12b17718794474842efab9c341299c");
-
-		return "hello world!"+webAccessLogDealDO.getId();
+		return "hello world!";
 	}
 
 	@RequestMapping("helloStr.json")

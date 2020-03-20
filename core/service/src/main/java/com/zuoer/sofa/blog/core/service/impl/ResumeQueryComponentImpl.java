@@ -4,13 +4,12 @@
  */
 package com.zuoer.sofa.blog.core.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.zuoer.sofa.blog.core.model.Resume;
 import com.zuoer.sofa.blog.core.service.ResumeQueryComponent;
 import com.zuoer.sofa.blog.core.service.converter.ResumeConverter;
-import com.zuoer.sofa.blog.dal.mapper.ResumeMapper;
+import com.zuoer.sofa.blog.dal.dao.ResumeMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * 
@@ -33,7 +32,7 @@ public class ResumeQueryComponentImpl implements ResumeQueryComponent {
 	@Override
 	public Resume getLastOne() {
 		// TODO Auto-generated method stub
-		return resumeConverter.convertOne(resumeMapper.selectById(1));
+		return resumeConverter.convertOne(resumeMapper.selectById(1l));
 	}
 
 }
