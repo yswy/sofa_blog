@@ -1,0 +1,1 @@
+mvn com.zuoer:sofa-blog-gen:1.0.0:generate -e -DtargetPath=./

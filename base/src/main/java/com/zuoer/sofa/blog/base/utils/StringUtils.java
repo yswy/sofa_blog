@@ -3781,7 +3781,10 @@ public class StringUtils extends org.apache.commons.lang.StringUtils {
 	public static String substringBetween(String str, String open, String close) {
 		return substringBetween(str, open, close, 0);
 	}
+public static void main(String[] args){
+		System.out.println(substringBetween("abcadc","a","c"));
 
+}
 	/**
 	 * 获取从open到换行符之间的字符
 	 * 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+	<operation name="selectByEmail">
+		<sql>
+			select id,article_id, tag_id,  gmt_create, gmt_modified  from tag_article where id = ?
+		</sql>
+	</operation>
+</table>

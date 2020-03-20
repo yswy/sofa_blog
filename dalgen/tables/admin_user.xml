@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+	<operation name="selectByEmail" multiplicity="many" >
+		<sql>
+			select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info  from admin_user where email =?
+		</sql>
+	</operation>
+
+	<operation name="insert">
+		<sql>
+			insert into admin_user(  id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info)
+		 values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate, sysdate, ?, ?, ?)
+		</sql>
+	</operation>
+	<operation name="selectById">
+		<sql>
+			select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info  from admin_user where id =?
+		</sql>
+	</operation>
+	<operation name="selectByIds">
+		<extraparams>
+			<param name="ids" javatype="java.util.List"></param>
+		</extraparams>
+		<sql>
+			select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create, gmt_modified, hobby, motto, md_info  from admin_user where 1=0
+		</sql>
+		<sqlmap>
+		<![CDATA[
+			 select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar, gmt_create,
+			gmt_modified, hobby, motto, md_info from admin_user
+			where
+			<foreach collection="ids" item="id" open=" id in(" close=")" separator=",">
+				#{id}
+			</foreach>
+			 ]]>
+		</sqlmap>
+	</operation>
+
+	<operation name="updateById" paramtype="object">
+		<sql>
+			update admin_user set username=?, password=?, birth_date=?, nickname=?,
+        email=?, github=?, qq=?, wecaht=?, avatar=?, gmt_modified=sysdate,
+        hobby=?, motto=?, md_info=? where id =?
+		</sql>
+	</operation>
+
+	<operation name="updateEmailById">
+		<sql>
+			update admin_user set
+        email=?,gmt_modified=sysdate where id =?
+		</sql>
+	</operation>
+
+	<operation name="updateByIds">
+		<extraparams>
+			<param name="ids" javatype="java.util.List"></param>
+		</extraparams>
+		<sql>
+			update admin_user set username=?, password=?, birth_date=?, nickname=?,
+        email=?, github=?, qq=?, wecaht=?, avatar=?, gmt_modified=sysdate,
+        hobby=?, motto=?, md_info=? where 1=0
+		</sql>
+		<sqlmap>
+		<![CDATA[
+			update admin_user set username=?, password=?, birth_date=?, nickname=?,
+			email=?, github=?, qq=?, wecaht=?, avatar=?, gmt_modified=sysdate,
+			hobby=?, motto=?, md_info=?
+			where
+			<foreach collection="ids" item="id" open=" id in(" close=")" separator=",">
+				#{id}
+			</foreach>
+			 ]]>
+		</sqlmap>
+	</operation>
+
+
+	
+</table>

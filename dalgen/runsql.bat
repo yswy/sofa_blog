@@ -1,1 +1,1 @@
-java -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig.xml -overwrite
+mvn org.mybatis.generator:mybatis-generator-maven-plugin:1.3.7:generate -e -Dmybatis.generator.configurationFile=./generatorConfig.xml

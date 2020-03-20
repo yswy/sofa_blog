@@ -11,11 +11,15 @@ import com.zuoer.sofa.blog.base.runtime.initializer.RuntimeInitializer;
 import org.apache.commons.pool2.impl.BaseObjectPoolConfig;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
-import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.boot.autoconfigure.SpringBootVFS;
 import org.mybatis.spring.transaction.SpringManagedTransactionFactory;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 
 /**
  * @author zuoer
@@ -37,7 +41,11 @@ public class BaseDataSourceComponentImpl implements BaseDataSourceComponent, Run
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         this.beanFactory = beanFactory;
         refreshDataSourceConfig();
-        registerDataSourceBean();
+        try {
+            registerDataSourceBean();
+        }catch (Exception e){
+            throw new BeanCreationException("数据源实例化失败",e);
+        }
     }
 
     private void refreshDataSourceConfig() {
@@ -89,7 +97,7 @@ public class BaseDataSourceComponentImpl implements BaseDataSourceComponent, Run
     /**
      * 注册数据源为SpringBean
      */
-    private void registerDataSourceBean() {
+    private void registerDataSourceBean() throws Exception {
 //        beanFactory.registerSingleton(baseDataSource.getDataSourceName(), new DataSourceProxy(this));
         beanFactory.registerSingleton("dataSource", new DataSourceProxy(this));
 
@@ -97,9 +105,17 @@ public class BaseDataSourceComponentImpl implements BaseDataSourceComponent, Run
         //这个是在BaseExecutor中的338行 getConnection中使用的，数据库连接就是从这里拿的
         SpringManagedTransactionFactory transactionFactory=new SpringManagedTransactionFactory();
         configuration.setEnvironment(new Environment(BaseDataSourceComponentImpl.class.getSimpleName(),transactionFactory,this.baseDataSource));
-        DefaultSqlSessionFactory defaultSqlSessionFactory=new DefaultSqlSessionFactory(configuration);
 
-        beanFactory.registerSingleton("sqlSession", new SqlSessionTemplate(defaultSqlSessionFactory));
+        //此处可以设置一些mybatis的一些配置
+        SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
+        factory.setDataSource(baseDataSource);
+        factory.setVfs(SpringBootVFS.class);
+        factory.setConfiguration(configuration);
+        ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
+        factory.setMapperLocations(resourceResolver.getResources("classpath:mybatis/*.xml"));
+
+
+        beanFactory.registerSingleton("sqlSession", new SqlSessionTemplate(factory.getObject()));
 
 //        BeanDefinition dataSource = beanFactory.getBeanDefinition("dataSource");
 //        MutablePropertyValues dataSourceProperty = dataSource.getPropertyValues();

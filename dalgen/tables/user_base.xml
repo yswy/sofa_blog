@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+	<operation name="selectByEmail">
+		<sql>
+			select id, username, password, birth_date, nickname, email, github, qq, wecaht, avatar,status,user_level, gmt_create, gmt_modified, hobby, motto, md_info  from user_base where id = ?
+   
+		</sql>
+	</operation>
+</table>

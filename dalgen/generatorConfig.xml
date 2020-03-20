@@ -4,9 +4,10 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
    <!--<classPathEntry  location="mysql-connector-java-5.1.31.jar"/>  -->
-	<classPathEntry  location="ojdbc14-11.2.0.3.0.jar"/>  
-    <context id="DB2Tables" targetRuntime="MyBatis3">
+	<classPathEntry  location="D:\bench_zuoer\sofa_blog\dalgen\ojdbc14-11.2.0.3.0.jar"/>  
 
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+		<property  name="targetRunPath" value="./"/>  
         <commentGenerator>
             <property name="suppressDate" value="true"/>
         </commentGenerator>
@@ -14,30 +15,34 @@
         <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://10.0.4.131:3306/test" userId="test" password="yswy"/>  -->
 
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
                         connectionURL="jdbc:oracle:thin:@10.0.0.91:1521/dev" userId="zuoer_test" password="zuoer_test"/>
 
         <javaModelGenerator targetPackage="com.zuoer.sofa.blog.dal.dateobject"
-                            targetProject="../dal/src/main/java/">
+                            targetProject="./src/main/java/">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="sqlmap"
-                         targetProject="../dal/src/main/resources">
+                         targetProject="./src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
+
         <javaClientGenerator type="XMLMAPPER"
                              targetPackage="com.zuoer.sofa.blog.dal.dao"
-                             targetProject="../src/main/java/">
+                             targetProject="./src/main/java/">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="user">
-            <generatedKey column="user_id" sqlStatement="MySql"
-                          identity="true"/>
-        </table>
+        <!--<table tableName="admin_user"/>-->
+        <table tableName="article"/>
+        <table tableName="tag"/>
+        <table tableName="tag_article"/>
+        <table tableName="user_table"/>
+
+		<table tableName="user_table"/>
         
     </context>
 </generatorConfiguration>

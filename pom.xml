@@ -23,6 +23,7 @@
         <module>dal</module>
         <module>web</module>
         <module>core</module>
+		<module>gen</module>
         <module>integration</module>
     </modules>
 
@@ -199,6 +200,13 @@
 				<version>2.5.0</version>
 			</dependency>
 
+			<!--mysql-->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.44</version>
+			</dependency>
+
 
             <!-- app-->
             <dependency>
@@ -229,6 +237,11 @@
             <dependency>
                 <groupId>com.zuoer</groupId>
                 <artifactId>sofa-blog-dal</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+			<dependency>
+                <groupId>com.zuoer</groupId>
+                <artifactId>sofa-blog-gen</artifactId>
                 <version>1.0.0</version>
             </dependency>
             <dependency>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+	<operation name="selectByEmail">
+		<sql>
+			select id, title,  gmt_create, gmt_modified, introduction, md_material, html_material  from article where id = ?
+    
+		</sql>
+	</operation>
+</table>
