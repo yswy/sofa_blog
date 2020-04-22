@@ -68,8 +68,11 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
                 }
             }
 
+            //extraparams现在没有进行解析，因为后面的sql是通过CDATA直接整个使用的，等后续进行解析转换了再对extraparams进行解析
+
+
             for (Node node : sqlNodeList) {
-                XmlElement answer = new XmlElement("sql"); //$NON-NLS-1$
+                XmlElement answer = new XmlElement("sql");
                 String id = node.getAttributes().getNamedItem("name").getNodeValue();
 //                //为了防止id冲突，在id前面评上表明，其中_换成-，并大写
 //                id=StringUtils.replace(StringUtils.toUpperCase(introspectedTable.getTableConfiguration().getTableName()),"_","-")+"-"+id;
@@ -79,6 +82,7 @@ public class UserDefindSqlElementGenerator extends AbstractXmlElementGenerator {
                 context.getCommentGenerator().addComment(answer);
 
                 StringBuilder sb = new StringBuilder();
+                //此处sql下的内容应为CDATA包含，所以可以直接获取文本方式获取
                 sb.append(node.getTextContent());
                 answer.addElement(new TextElement(sb.toString()));
                 parentElement.addElement(answer);
