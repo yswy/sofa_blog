@@ -75,7 +75,7 @@ public class GitMergeTest {
     }
 
     private static CredentialsProvider createCredentialsProvider() {
-        CredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider("zuoer", "w415927w");
+        CredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider("", "");
         return credentialsProvider;
     }
 
