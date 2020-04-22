@@ -71,6 +71,9 @@ public class GitMergeTest {
             log("----------------------------------------------------------");
             log("\r\n\r\n准备处理：" + appCode + "从" + fromBranchName + "合并到" + toBranchName);
             boolean conflict = mergeOne(appCode, fromBranchName, toBranchName);
+            if(conflict){
+                log("\r\n\r\n合并有冲突，请手工处理之后提交");
+            }
         }
     }
 
