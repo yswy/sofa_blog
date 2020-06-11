@@ -32,6 +32,10 @@ public class GitMergeTest {
 
     private static FileWriter logFileWriter;
 
+    private static List<String> mergeSuccessAppCode=new ArrayList<>();
+
+    private static List<String> mergeConflictAppCode=new ArrayList<>();
+
     public static void main(String[] args) throws Exception {
         mergeInner();
     }
@@ -72,9 +76,18 @@ public class GitMergeTest {
             log("\r\n\r\n准备处理：" + appCode + "从" + fromBranchName + "合并到" + toBranchName);
             boolean conflict = mergeOne(appCode, fromBranchName, toBranchName);
             if(conflict){
+                mergeConflictAppCode.add(appCode);
                 log("\r\n\r\n合并有冲突，请手工处理之后提交");
+            }else{
+                mergeSuccessAppCode.add(appCode);
             }
         }
+
+        System.out.println("----------------------------------合并结果清单----------------------------------");
+        System.out.println("以下是合并成功的：");
+        mergeSuccessAppCode.forEach(e->System.out.println(e));
+        System.out.println("以下是有冲突的，需要手工处理：");
+        mergeConflictAppCode.forEach(e->System.out.println(e));
     }
 
     private static CredentialsProvider createCredentialsProvider() {
@@ -97,8 +110,8 @@ public class GitMergeTest {
         }
 
         //先clone代码
-//        CloneCommand cloneCommand= Git.cloneRepository().setURI("https://git.benchdev.cn/legend/"+appCode+".git");
-        CloneCommand cloneCommand = Git.cloneRepository().setURI("https://git-dev.benchdev.cn/zuoer/" + appCode + ".git");
+        CloneCommand cloneCommand= Git.cloneRepository().setURI("https://git.benchdev.cn/legend/"+appCode+".git");
+//        CloneCommand cloneCommand = Git.cloneRepository().setURI("https://git-dev.benchdev.cn/zuoer/" + appCode + ".git");
         cloneCommand.setDirectory(dir);
 
         cloneCommand.setCredentialsProvider(createCredentialsProvider());

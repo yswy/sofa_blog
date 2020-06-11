@@ -1,1 +1,4 @@
-zuoer_test@feature/20200420_test_1@master
+aisport-miniprogram-client@feature/20200605_42
+bops.aisport.base@feature/20200605_42
+aisport.core.base@feature/20200605_42
+aisport.miniprogapi.base@feature/20200605_42
