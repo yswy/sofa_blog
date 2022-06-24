@@ -32,7 +32,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Environment Settings -->
         <java.version>11</java.version>
-		<resteasy.version>3.0.12.Final</resteasy.version>
+		<resteasy.version>3.14.0.Final</resteasy.version>
 		<rpc.all.version>5.3.1</rpc.all.version>
 		<zkclient.version>0.10</zkclient.version>
 		<curator.version>2.9.1</curator.version>
